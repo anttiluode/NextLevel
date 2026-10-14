@@ -1,0 +1,3576 @@
+{
+  "seed": 41,
+  "device": "cpu",
+  "steps": 350,
+  "batch_size": 64,
+  "sequence_length_train": 24,
+  "lr": 0.002,
+  "train_seconds": 11.152,
+  "model_properties": {
+    "phase_graph": {
+      "state_bytes": 64,
+      "shared_trainable_parameters": 18120,
+      "shared_total_parameters": 18120,
+      "sample_byte_checksum": 2607
+    },
+    "phase_fixed_router": {
+      "state_bytes": 64,
+      "shared_trainable_parameters": 1992,
+      "shared_total_parameters": 18120,
+      "sample_byte_checksum": 2705
+    },
+    "gru": {
+      "state_bytes": 64,
+      "shared_trainable_parameters": 29377,
+      "shared_total_parameters": 29377,
+      "sample_byte_checksum": 8472
+    },
+    "fast_weight": {
+      "state_bytes": 64,
+      "shared_trainable_parameters": 2466,
+      "shared_total_parameters": 2466,
+      "sample_byte_checksum": 8112
+    },
+    "window_attention": {
+      "state_bytes": 64,
+      "shared_trainable_parameters": 3139,
+      "shared_total_parameters": 3139
+    }
+  },
+  "route_diagnostics": {
+    "writer_route_entropy_nats": 4.12919282913208,
+    "distinct_writer_top_sites": 56,
+    "mean_writer_site_probability": 0.027231603860855103,
+    "read_write_top_site_agreement": 0.9296875,
+    "mean_order_ab_probability": 0.6025132536888123,
+    "mean_order_confidence": 0.6029453277587891,
+    "writer_top_sites_changed_during_training": 31,
+    "key_count": 128,
+    "ratio_minus_direct_max_complex_abs": 4.805480102731963e-07
+  },
+  "train_loss_samples": [
+    {
+      "step": 35,
+      "scenario": "independent",
+      "phase_graph": 0.481053,
+      "phase_fixed_router": 0.442265,
+      "gru": 0.682284,
+      "fast_weight": 0.693125,
+      "window_attention": 0.64418
+    },
+    {
+      "step": 70,
+      "scenario": "grouped",
+      "phase_graph": 0.387085,
+      "phase_fixed_router": 0.459272,
+      "gru": 0.681757,
+      "fast_weight": 0.692913,
+      "window_attention": 0.575512
+    },
+    {
+      "step": 105,
+      "scenario": "independent",
+      "phase_graph": 0.295335,
+      "phase_fixed_router": 0.264381,
+      "gru": 0.654347,
+      "fast_weight": 0.698665,
+      "window_attention": 0.518095
+    },
+    {
+      "step": 140,
+      "scenario": "grouped",
+      "phase_graph": 0.281602,
+      "phase_fixed_router": 0.26319,
+      "gru": 0.604182,
+      "fast_weight": 0.699513,
+      "window_attention": 0.365175
+    },
+    {
+      "step": 175,
+      "scenario": "independent",
+      "phase_graph": 0.31645,
+      "phase_fixed_router": 0.268998,
+      "gru": 0.694521,
+      "fast_weight": 0.685592,
+      "window_attention": 0.296162
+    },
+    {
+      "step": 210,
+      "scenario": "grouped",
+      "phase_graph": 0.317688,
+      "phase_fixed_router": 0.334005,
+      "gru": 0.712434,
+      "fast_weight": 0.691573,
+      "window_attention": 0.166036
+    },
+    {
+      "step": 245,
+      "scenario": "independent",
+      "phase_graph": 0.479948,
+      "phase_fixed_router": 0.375174,
+      "gru": 0.6653,
+      "fast_weight": 0.690868,
+      "window_attention": 0.152688
+    },
+    {
+      "step": 280,
+      "scenario": "grouped",
+      "phase_graph": 0.380705,
+      "phase_fixed_router": 0.261086,
+      "gru": 0.654053,
+      "fast_weight": 0.69428,
+      "window_attention": 0.07257
+    },
+    {
+      "step": 315,
+      "scenario": "independent",
+      "phase_graph": 0.254184,
+      "phase_fixed_router": 0.281306,
+      "gru": 0.637205,
+      "fast_weight": 0.694695,
+      "window_attention": 0.144115
+    },
+    {
+      "step": 350,
+      "scenario": "grouped",
+      "phase_graph": 0.211881,
+      "phase_fixed_router": 0.225981,
+      "gru": 0.649135,
+      "fast_weight": 0.690175,
+      "window_attention": 0.035747
+    }
+  ],
+  "test": [
+    {
+      "scenario": "independent",
+      "length": 16,
+      "model": "phase_graph",
+      "readout": "ratio",
+      "accuracy": 0.90625,
+      "bce": 0.260973,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "independent",
+      "length": 16,
+      "model": "phase_graph",
+      "readout": "paired",
+      "accuracy": 0.888672,
+      "bce": 0.296694,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "independent",
+      "length": 16,
+      "model": "phase_graph",
+      "readout": "single",
+      "accuracy": 0.837891,
+      "bce": 0.359527,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "independent",
+      "length": 16,
+      "model": "phase_graph",
+      "readout": "fixed_route",
+      "accuracy": 0.589844,
+      "bce": 0.677311,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "independent",
+      "length": 16,
+      "model": "phase_graph",
+      "readout": "learned_order_policy",
+      "accuracy": 0.794922,
+      "bce": 0.458176,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "independent",
+      "length": 16,
+      "model": "phase_graph",
+      "readout": "direct_addressed",
+      "accuracy": 0.90625,
+      "bce": 0.260635,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "independent",
+      "length": 16,
+      "model": "phase_fixed_router",
+      "readout": "ratio",
+      "accuracy": 0.957031,
+      "bce": 0.179974,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "independent",
+      "length": 16,
+      "model": "phase_fixed_router",
+      "readout": "paired",
+      "accuracy": 0.902344,
+      "bce": 0.270132,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "independent",
+      "length": 16,
+      "model": "phase_fixed_router",
+      "readout": "single",
+      "accuracy": 0.8125,
+      "bce": 0.408462,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "independent",
+      "length": 16,
+      "model": "phase_fixed_router",
+      "readout": "fixed_route",
+      "accuracy": 0.523438,
+      "bce": 0.689185,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "independent",
+      "length": 16,
+      "model": "phase_fixed_router",
+      "readout": "learned_order_policy",
+      "accuracy": 0.761719,
+      "bce": 0.507629,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "independent",
+      "length": 16,
+      "model": "phase_fixed_router",
+      "readout": "direct_addressed",
+      "accuracy": 0.957031,
+      "bce": 0.179471,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "independent",
+      "length": 16,
+      "model": "gru",
+      "readout": "gru",
+      "accuracy": 0.621094,
+      "bce": 0.658196,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "independent",
+      "length": 16,
+      "model": "fast_weight",
+      "readout": "fast_weight",
+      "accuracy": 0.498047,
+      "bce": 0.693145,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "independent",
+      "length": 16,
+      "model": "window_attention",
+      "readout": "attention",
+      "accuracy": 0.974609,
+      "bce": 0.073265,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "independent",
+      "length": 16,
+      "model": "exact_window_64B",
+      "readout": "last_match",
+      "accuracy": 1.0,
+      "bce": null,
+      "episodes": 512,
+      "hit_rate": 1.0,
+      "seed": 41
+    },
+    {
+      "scenario": "independent",
+      "length": 16,
+      "model": "indexed_bit_table_16B",
+      "readout": "exact",
+      "accuracy": 1.0,
+      "bce": null,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "independent",
+      "length": 32,
+      "model": "phase_graph",
+      "readout": "ratio",
+      "accuracy": 0.914062,
+      "bce": 0.288703,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "independent",
+      "length": 32,
+      "model": "phase_graph",
+      "readout": "paired",
+      "accuracy": 0.847656,
+      "bce": 0.385417,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "independent",
+      "length": 32,
+      "model": "phase_graph",
+      "readout": "single",
+      "accuracy": 0.751953,
+      "bce": 0.488066,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "independent",
+      "length": 32,
+      "model": "phase_graph",
+      "readout": "fixed_route",
+      "accuracy": 0.507812,
+      "bce": 0.702564,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "independent",
+      "length": 32,
+      "model": "phase_graph",
+      "readout": "learned_order_policy",
+      "accuracy": 0.699219,
+      "bce": 0.582093,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "independent",
+      "length": 32,
+      "model": "phase_graph",
+      "readout": "direct_addressed",
+      "accuracy": 0.914062,
+      "bce": 0.28874,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "independent",
+      "length": 32,
+      "model": "phase_fixed_router",
+      "readout": "ratio",
+      "accuracy": 0.935547,
+      "bce": 0.242111,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "independent",
+      "length": 32,
+      "model": "phase_fixed_router",
+      "readout": "paired",
+      "accuracy": 0.839844,
+      "bce": 0.348409,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "independent",
+      "length": 32,
+      "model": "phase_fixed_router",
+      "readout": "single",
+      "accuracy": 0.740234,
+      "bce": 0.5165,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "independent",
+      "length": 32,
+      "model": "phase_fixed_router",
+      "readout": "fixed_route",
+      "accuracy": 0.501953,
+      "bce": 0.701396,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "independent",
+      "length": 32,
+      "model": "phase_fixed_router",
+      "readout": "learned_order_policy",
+      "accuracy": 0.671875,
+      "bce": 0.585967,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "independent",
+      "length": 32,
+      "model": "phase_fixed_router",
+      "readout": "direct_addressed",
+      "accuracy": 0.935547,
+      "bce": 0.241542,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "independent",
+      "length": 32,
+      "model": "gru",
+      "readout": "gru",
+      "accuracy": 0.542969,
+      "bce": 0.693728,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "independent",
+      "length": 32,
+      "model": "fast_weight",
+      "readout": "fast_weight",
+      "accuracy": 0.503906,
+      "bce": 0.692647,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "independent",
+      "length": 32,
+      "model": "window_attention",
+      "readout": "attention",
+      "accuracy": 0.955078,
+      "bce": 0.112073,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "independent",
+      "length": 32,
+      "model": "exact_window_64B",
+      "readout": "last_match",
+      "accuracy": 1.0,
+      "bce": null,
+      "episodes": 512,
+      "hit_rate": 1.0,
+      "seed": 41
+    },
+    {
+      "scenario": "independent",
+      "length": 32,
+      "model": "indexed_bit_table_16B",
+      "readout": "exact",
+      "accuracy": 1.0,
+      "bce": null,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "independent",
+      "length": 64,
+      "model": "phase_graph",
+      "readout": "ratio",
+      "accuracy": 0.824219,
+      "bce": 0.480182,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "independent",
+      "length": 64,
+      "model": "phase_graph",
+      "readout": "paired",
+      "accuracy": 0.744141,
+      "bce": 0.554004,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "independent",
+      "length": 64,
+      "model": "phase_graph",
+      "readout": "single",
+      "accuracy": 0.664062,
+      "bce": 0.642901,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "independent",
+      "length": 64,
+      "model": "phase_graph",
+      "readout": "fixed_route",
+      "accuracy": 0.527344,
+      "bce": 0.696459,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "independent",
+      "length": 64,
+      "model": "phase_graph",
+      "readout": "learned_order_policy",
+      "accuracy": 0.621094,
+      "bce": 0.686854,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "independent",
+      "length": 64,
+      "model": "phase_graph",
+      "readout": "direct_addressed",
+      "accuracy": 0.824219,
+      "bce": 0.479274,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "independent",
+      "length": 64,
+      "model": "phase_fixed_router",
+      "readout": "ratio",
+      "accuracy": 0.873047,
+      "bce": 0.427605,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "independent",
+      "length": 64,
+      "model": "phase_fixed_router",
+      "readout": "paired",
+      "accuracy": 0.730469,
+      "bce": 0.500984,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "independent",
+      "length": 64,
+      "model": "phase_fixed_router",
+      "readout": "single",
+      "accuracy": 0.652344,
+      "bce": 0.674206,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "independent",
+      "length": 64,
+      "model": "phase_fixed_router",
+      "readout": "fixed_route",
+      "accuracy": 0.509766,
+      "bce": 0.692198,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "independent",
+      "length": 64,
+      "model": "phase_fixed_router",
+      "readout": "learned_order_policy",
+      "accuracy": 0.568359,
+      "bce": 0.694213,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "independent",
+      "length": 64,
+      "model": "phase_fixed_router",
+      "readout": "direct_addressed",
+      "accuracy": 0.873047,
+      "bce": 0.425896,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "independent",
+      "length": 64,
+      "model": "gru",
+      "readout": "gru",
+      "accuracy": 0.548828,
+      "bce": 0.68938,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "independent",
+      "length": 64,
+      "model": "fast_weight",
+      "readout": "fast_weight",
+      "accuracy": 0.529297,
+      "bce": 0.692084,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "independent",
+      "length": 64,
+      "model": "window_attention",
+      "readout": "attention",
+      "accuracy": 0.773438,
+      "bce": 0.409705,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "independent",
+      "length": 64,
+      "model": "exact_window_64B",
+      "readout": "last_match",
+      "accuracy": 0.805664,
+      "bce": null,
+      "episodes": 512,
+      "hit_rate": 0.611328,
+      "seed": 41
+    },
+    {
+      "scenario": "independent",
+      "length": 64,
+      "model": "indexed_bit_table_16B",
+      "readout": "exact",
+      "accuracy": 1.0,
+      "bce": null,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "independent",
+      "length": 96,
+      "model": "phase_graph",
+      "readout": "ratio",
+      "accuracy": 0.796875,
+      "bce": 0.585414,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "independent",
+      "length": 96,
+      "model": "phase_graph",
+      "readout": "paired",
+      "accuracy": 0.695312,
+      "bce": 0.642515,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "independent",
+      "length": 96,
+      "model": "phase_graph",
+      "readout": "single",
+      "accuracy": 0.640625,
+      "bce": 0.70521,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "independent",
+      "length": 96,
+      "model": "phase_graph",
+      "readout": "fixed_route",
+      "accuracy": 0.525391,
+      "bce": 0.694693,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "independent",
+      "length": 96,
+      "model": "phase_graph",
+      "readout": "learned_order_policy",
+      "accuracy": 0.630859,
+      "bce": 0.702801,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "independent",
+      "length": 96,
+      "model": "phase_graph",
+      "readout": "direct_addressed",
+      "accuracy": 0.796875,
+      "bce": 0.58568,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "independent",
+      "length": 96,
+      "model": "phase_fixed_router",
+      "readout": "ratio",
+      "accuracy": 0.841797,
+      "bce": 0.504112,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "independent",
+      "length": 96,
+      "model": "phase_fixed_router",
+      "readout": "paired",
+      "accuracy": 0.660156,
+      "bce": 0.604221,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "independent",
+      "length": 96,
+      "model": "phase_fixed_router",
+      "readout": "single",
+      "accuracy": 0.591797,
+      "bce": 0.786903,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "independent",
+      "length": 96,
+      "model": "phase_fixed_router",
+      "readout": "fixed_route",
+      "accuracy": 0.507812,
+      "bce": 0.697302,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "independent",
+      "length": 96,
+      "model": "phase_fixed_router",
+      "readout": "learned_order_policy",
+      "accuracy": 0.527344,
+      "bce": 0.756726,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "independent",
+      "length": 96,
+      "model": "phase_fixed_router",
+      "readout": "direct_addressed",
+      "accuracy": 0.841797,
+      "bce": 0.505062,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "independent",
+      "length": 96,
+      "model": "gru",
+      "readout": "gru",
+      "accuracy": 0.550781,
+      "bce": 0.694821,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "independent",
+      "length": 96,
+      "model": "fast_weight",
+      "readout": "fast_weight",
+      "accuracy": 0.486328,
+      "bce": 0.694743,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "independent",
+      "length": 96,
+      "model": "window_attention",
+      "readout": "attention",
+      "accuracy": 0.722656,
+      "bce": 0.493954,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "independent",
+      "length": 96,
+      "model": "exact_window_64B",
+      "readout": "last_match",
+      "accuracy": 0.742188,
+      "bce": null,
+      "episodes": 512,
+      "hit_rate": 0.484375,
+      "seed": 41
+    },
+    {
+      "scenario": "independent",
+      "length": 96,
+      "model": "indexed_bit_table_16B",
+      "readout": "exact",
+      "accuracy": 1.0,
+      "bce": null,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped",
+      "length": 16,
+      "model": "phase_graph",
+      "readout": "ratio",
+      "accuracy": 0.923828,
+      "bce": 0.222403,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped",
+      "length": 16,
+      "model": "phase_graph",
+      "readout": "paired",
+      "accuracy": 0.910156,
+      "bce": 0.267852,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped",
+      "length": 16,
+      "model": "phase_graph",
+      "readout": "single",
+      "accuracy": 0.830078,
+      "bce": 0.341577,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped",
+      "length": 16,
+      "model": "phase_graph",
+      "readout": "fixed_route",
+      "accuracy": 0.603516,
+      "bce": 0.671854,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped",
+      "length": 16,
+      "model": "phase_graph",
+      "readout": "learned_order_policy",
+      "accuracy": 0.802734,
+      "bce": 0.452045,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped",
+      "length": 16,
+      "model": "phase_graph",
+      "readout": "direct_addressed",
+      "accuracy": 0.923828,
+      "bce": 0.221486,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped",
+      "length": 16,
+      "model": "phase_fixed_router",
+      "readout": "ratio",
+      "accuracy": 0.957031,
+      "bce": 0.181471,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped",
+      "length": 16,
+      "model": "phase_fixed_router",
+      "readout": "paired",
+      "accuracy": 0.898438,
+      "bce": 0.27472,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped",
+      "length": 16,
+      "model": "phase_fixed_router",
+      "readout": "single",
+      "accuracy": 0.78125,
+      "bce": 0.425391,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped",
+      "length": 16,
+      "model": "phase_fixed_router",
+      "readout": "fixed_route",
+      "accuracy": 0.554688,
+      "bce": 0.686144,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped",
+      "length": 16,
+      "model": "phase_fixed_router",
+      "readout": "learned_order_policy",
+      "accuracy": 0.736328,
+      "bce": 0.525103,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped",
+      "length": 16,
+      "model": "phase_fixed_router",
+      "readout": "direct_addressed",
+      "accuracy": 0.957031,
+      "bce": 0.180666,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped",
+      "length": 16,
+      "model": "gru",
+      "readout": "gru",
+      "accuracy": 0.603516,
+      "bce": 0.649312,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped",
+      "length": 16,
+      "model": "fast_weight",
+      "readout": "fast_weight",
+      "accuracy": 0.460938,
+      "bce": 0.696783,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped",
+      "length": 16,
+      "model": "window_attention",
+      "readout": "attention",
+      "accuracy": 1.0,
+      "bce": 0.033325,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped",
+      "length": 16,
+      "model": "exact_window_64B",
+      "readout": "last_match",
+      "accuracy": 1.0,
+      "bce": null,
+      "episodes": 512,
+      "hit_rate": 1.0,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped",
+      "length": 16,
+      "model": "indexed_bit_table_16B",
+      "readout": "exact",
+      "accuracy": 1.0,
+      "bce": null,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped",
+      "length": 32,
+      "model": "phase_graph",
+      "readout": "ratio",
+      "accuracy": 0.882812,
+      "bce": 0.339948,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped",
+      "length": 32,
+      "model": "phase_graph",
+      "readout": "paired",
+      "accuracy": 0.792969,
+      "bce": 0.450843,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped",
+      "length": 32,
+      "model": "phase_graph",
+      "readout": "single",
+      "accuracy": 0.722656,
+      "bce": 0.548231,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped",
+      "length": 32,
+      "model": "phase_graph",
+      "readout": "fixed_route",
+      "accuracy": 0.613281,
+      "bce": 0.662332,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped",
+      "length": 32,
+      "model": "phase_graph",
+      "readout": "learned_order_policy",
+      "accuracy": 0.693359,
+      "bce": 0.60891,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped",
+      "length": 32,
+      "model": "phase_graph",
+      "readout": "direct_addressed",
+      "accuracy": 0.882812,
+      "bce": 0.339443,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped",
+      "length": 32,
+      "model": "phase_fixed_router",
+      "readout": "ratio",
+      "accuracy": 0.917969,
+      "bce": 0.289939,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped",
+      "length": 32,
+      "model": "phase_fixed_router",
+      "readout": "paired",
+      "accuracy": 0.798828,
+      "bce": 0.393873,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped",
+      "length": 32,
+      "model": "phase_fixed_router",
+      "readout": "single",
+      "accuracy": 0.714844,
+      "bce": 0.579654,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped",
+      "length": 32,
+      "model": "phase_fixed_router",
+      "readout": "fixed_route",
+      "accuracy": 0.582031,
+      "bce": 0.679029,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped",
+      "length": 32,
+      "model": "phase_fixed_router",
+      "readout": "learned_order_policy",
+      "accuracy": 0.630859,
+      "bce": 0.635477,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped",
+      "length": 32,
+      "model": "phase_fixed_router",
+      "readout": "direct_addressed",
+      "accuracy": 0.917969,
+      "bce": 0.289912,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped",
+      "length": 32,
+      "model": "gru",
+      "readout": "gru",
+      "accuracy": 0.628906,
+      "bce": 0.641927,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped",
+      "length": 32,
+      "model": "fast_weight",
+      "readout": "fast_weight",
+      "accuracy": 0.490234,
+      "bce": 0.6941,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped",
+      "length": 32,
+      "model": "window_attention",
+      "readout": "attention",
+      "accuracy": 1.0,
+      "bce": 0.04005,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped",
+      "length": 32,
+      "model": "exact_window_64B",
+      "readout": "last_match",
+      "accuracy": 1.0,
+      "bce": null,
+      "episodes": 512,
+      "hit_rate": 1.0,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped",
+      "length": 32,
+      "model": "indexed_bit_table_16B",
+      "readout": "exact",
+      "accuracy": 1.0,
+      "bce": null,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped",
+      "length": 64,
+      "model": "phase_graph",
+      "readout": "ratio",
+      "accuracy": 0.826172,
+      "bce": 0.49927,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped",
+      "length": 64,
+      "model": "phase_graph",
+      "readout": "paired",
+      "accuracy": 0.708984,
+      "bce": 0.604311,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped",
+      "length": 64,
+      "model": "phase_graph",
+      "readout": "single",
+      "accuracy": 0.630859,
+      "bce": 0.677397,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped",
+      "length": 64,
+      "model": "phase_graph",
+      "readout": "fixed_route",
+      "accuracy": 0.558594,
+      "bce": 0.6833,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped",
+      "length": 64,
+      "model": "phase_graph",
+      "readout": "learned_order_policy",
+      "accuracy": 0.638672,
+      "bce": 0.685092,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped",
+      "length": 64,
+      "model": "phase_graph",
+      "readout": "direct_addressed",
+      "accuracy": 0.826172,
+      "bce": 0.498892,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped",
+      "length": 64,
+      "model": "phase_fixed_router",
+      "readout": "ratio",
+      "accuracy": 0.833984,
+      "bce": 0.534814,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped",
+      "length": 64,
+      "model": "phase_fixed_router",
+      "readout": "paired",
+      "accuracy": 0.703125,
+      "bce": 0.579705,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped",
+      "length": 64,
+      "model": "phase_fixed_router",
+      "readout": "single",
+      "accuracy": 0.621094,
+      "bce": 0.725028,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped",
+      "length": 64,
+      "model": "phase_fixed_router",
+      "readout": "fixed_route",
+      "accuracy": 0.523438,
+      "bce": 0.689713,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped",
+      "length": 64,
+      "model": "phase_fixed_router",
+      "readout": "learned_order_policy",
+      "accuracy": 0.587891,
+      "bce": 0.705671,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped",
+      "length": 64,
+      "model": "phase_fixed_router",
+      "readout": "direct_addressed",
+      "accuracy": 0.833984,
+      "bce": 0.534124,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped",
+      "length": 64,
+      "model": "gru",
+      "readout": "gru",
+      "accuracy": 0.568359,
+      "bce": 0.688722,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped",
+      "length": 64,
+      "model": "fast_weight",
+      "readout": "fast_weight",
+      "accuracy": 0.470703,
+      "bce": 0.694616,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped",
+      "length": 64,
+      "model": "window_attention",
+      "readout": "attention",
+      "accuracy": 0.814453,
+      "bce": 0.372938,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped",
+      "length": 64,
+      "model": "exact_window_64B",
+      "readout": "last_match",
+      "accuracy": 0.796875,
+      "bce": null,
+      "episodes": 512,
+      "hit_rate": 0.59375,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped",
+      "length": 64,
+      "model": "indexed_bit_table_16B",
+      "readout": "exact",
+      "accuracy": 1.0,
+      "bce": null,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped",
+      "length": 96,
+      "model": "phase_graph",
+      "readout": "ratio",
+      "accuracy": 0.824219,
+      "bce": 0.509027,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped",
+      "length": 96,
+      "model": "phase_graph",
+      "readout": "paired",
+      "accuracy": 0.710938,
+      "bce": 0.588014,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped",
+      "length": 96,
+      "model": "phase_graph",
+      "readout": "single",
+      "accuracy": 0.652344,
+      "bce": 0.665784,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped",
+      "length": 96,
+      "model": "phase_graph",
+      "readout": "fixed_route",
+      "accuracy": 0.597656,
+      "bce": 0.672059,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped",
+      "length": 96,
+      "model": "phase_graph",
+      "readout": "learned_order_policy",
+      "accuracy": 0.644531,
+      "bce": 0.673538,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped",
+      "length": 96,
+      "model": "phase_graph",
+      "readout": "direct_addressed",
+      "accuracy": 0.824219,
+      "bce": 0.50876,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped",
+      "length": 96,
+      "model": "phase_fixed_router",
+      "readout": "ratio",
+      "accuracy": 0.84375,
+      "bce": 0.504667,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped",
+      "length": 96,
+      "model": "phase_fixed_router",
+      "readout": "paired",
+      "accuracy": 0.6875,
+      "bce": 0.552021,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped",
+      "length": 96,
+      "model": "phase_fixed_router",
+      "readout": "single",
+      "accuracy": 0.632812,
+      "bce": 0.71334,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped",
+      "length": 96,
+      "model": "phase_fixed_router",
+      "readout": "fixed_route",
+      "accuracy": 0.564453,
+      "bce": 0.682838,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped",
+      "length": 96,
+      "model": "phase_fixed_router",
+      "readout": "learned_order_policy",
+      "accuracy": 0.580078,
+      "bce": 0.698967,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped",
+      "length": 96,
+      "model": "phase_fixed_router",
+      "readout": "direct_addressed",
+      "accuracy": 0.84375,
+      "bce": 0.504389,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped",
+      "length": 96,
+      "model": "gru",
+      "readout": "gru",
+      "accuracy": 0.609375,
+      "bce": 0.657871,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped",
+      "length": 96,
+      "model": "fast_weight",
+      "readout": "fast_weight",
+      "accuracy": 0.490234,
+      "bce": 0.694127,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped",
+      "length": 96,
+      "model": "window_attention",
+      "readout": "attention",
+      "accuracy": 0.751953,
+      "bce": 0.48525,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped",
+      "length": 96,
+      "model": "exact_window_64B",
+      "readout": "last_match",
+      "accuracy": 0.726562,
+      "bce": null,
+      "episodes": 512,
+      "hit_rate": 0.453125,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped",
+      "length": 96,
+      "model": "indexed_bit_table_16B",
+      "readout": "exact",
+      "accuracy": 1.0,
+      "bce": null,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "broken_group",
+      "length": 16,
+      "model": "phase_graph",
+      "readout": "ratio",
+      "accuracy": 0.931641,
+      "bce": 0.19985,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "broken_group",
+      "length": 16,
+      "model": "phase_graph",
+      "readout": "paired",
+      "accuracy": 0.916016,
+      "bce": 0.249607,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "broken_group",
+      "length": 16,
+      "model": "phase_graph",
+      "readout": "single",
+      "accuracy": 0.857422,
+      "bce": 0.340881,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "broken_group",
+      "length": 16,
+      "model": "phase_graph",
+      "readout": "fixed_route",
+      "accuracy": 0.583984,
+      "bce": 0.671286,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "broken_group",
+      "length": 16,
+      "model": "phase_graph",
+      "readout": "learned_order_policy",
+      "accuracy": 0.785156,
+      "bce": 0.465687,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "broken_group",
+      "length": 16,
+      "model": "phase_graph",
+      "readout": "direct_addressed",
+      "accuracy": 0.931641,
+      "bce": 0.199143,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "broken_group",
+      "length": 16,
+      "model": "phase_fixed_router",
+      "readout": "ratio",
+      "accuracy": 0.958984,
+      "bce": 0.174596,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "broken_group",
+      "length": 16,
+      "model": "phase_fixed_router",
+      "readout": "paired",
+      "accuracy": 0.902344,
+      "bce": 0.261688,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "broken_group",
+      "length": 16,
+      "model": "phase_fixed_router",
+      "readout": "single",
+      "accuracy": 0.828125,
+      "bce": 0.393726,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "broken_group",
+      "length": 16,
+      "model": "phase_fixed_router",
+      "readout": "fixed_route",
+      "accuracy": 0.568359,
+      "bce": 0.681805,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "broken_group",
+      "length": 16,
+      "model": "phase_fixed_router",
+      "readout": "learned_order_policy",
+      "accuracy": 0.769531,
+      "bce": 0.490534,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "broken_group",
+      "length": 16,
+      "model": "phase_fixed_router",
+      "readout": "direct_addressed",
+      "accuracy": 0.958984,
+      "bce": 0.174051,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "broken_group",
+      "length": 16,
+      "model": "gru",
+      "readout": "gru",
+      "accuracy": 0.591797,
+      "bce": 0.661147,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "broken_group",
+      "length": 16,
+      "model": "fast_weight",
+      "readout": "fast_weight",
+      "accuracy": 0.529297,
+      "bce": 0.692284,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "broken_group",
+      "length": 16,
+      "model": "window_attention",
+      "readout": "attention",
+      "accuracy": 0.976562,
+      "bce": 0.066946,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "broken_group",
+      "length": 16,
+      "model": "exact_window_64B",
+      "readout": "last_match",
+      "accuracy": 1.0,
+      "bce": null,
+      "episodes": 512,
+      "hit_rate": 1.0,
+      "seed": 41
+    },
+    {
+      "scenario": "broken_group",
+      "length": 16,
+      "model": "indexed_bit_table_16B",
+      "readout": "exact",
+      "accuracy": 1.0,
+      "bce": null,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "broken_group",
+      "length": 32,
+      "model": "phase_graph",
+      "readout": "ratio",
+      "accuracy": 0.876953,
+      "bce": 0.333831,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "broken_group",
+      "length": 32,
+      "model": "phase_graph",
+      "readout": "paired",
+      "accuracy": 0.816406,
+      "bce": 0.429337,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "broken_group",
+      "length": 32,
+      "model": "phase_graph",
+      "readout": "single",
+      "accuracy": 0.742188,
+      "bce": 0.549042,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "broken_group",
+      "length": 32,
+      "model": "phase_graph",
+      "readout": "fixed_route",
+      "accuracy": 0.535156,
+      "bce": 0.695229,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "broken_group",
+      "length": 32,
+      "model": "phase_graph",
+      "readout": "learned_order_policy",
+      "accuracy": 0.660156,
+      "bce": 0.631669,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "broken_group",
+      "length": 32,
+      "model": "phase_graph",
+      "readout": "direct_addressed",
+      "accuracy": 0.876953,
+      "bce": 0.333045,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "broken_group",
+      "length": 32,
+      "model": "phase_fixed_router",
+      "readout": "ratio",
+      "accuracy": 0.935547,
+      "bce": 0.240603,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "broken_group",
+      "length": 32,
+      "model": "phase_fixed_router",
+      "readout": "paired",
+      "accuracy": 0.824219,
+      "bce": 0.365586,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "broken_group",
+      "length": 32,
+      "model": "phase_fixed_router",
+      "readout": "single",
+      "accuracy": 0.716797,
+      "bce": 0.547188,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "broken_group",
+      "length": 32,
+      "model": "phase_fixed_router",
+      "readout": "fixed_route",
+      "accuracy": 0.490234,
+      "bce": 0.695805,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "broken_group",
+      "length": 32,
+      "model": "phase_fixed_router",
+      "readout": "learned_order_policy",
+      "accuracy": 0.646484,
+      "bce": 0.614461,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "broken_group",
+      "length": 32,
+      "model": "phase_fixed_router",
+      "readout": "direct_addressed",
+      "accuracy": 0.935547,
+      "bce": 0.240334,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "broken_group",
+      "length": 32,
+      "model": "gru",
+      "readout": "gru",
+      "accuracy": 0.560547,
+      "bce": 0.684097,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "broken_group",
+      "length": 32,
+      "model": "fast_weight",
+      "readout": "fast_weight",
+      "accuracy": 0.507812,
+      "bce": 0.693415,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "broken_group",
+      "length": 32,
+      "model": "window_attention",
+      "readout": "attention",
+      "accuracy": 0.96875,
+      "bce": 0.104784,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "broken_group",
+      "length": 32,
+      "model": "exact_window_64B",
+      "readout": "last_match",
+      "accuracy": 1.0,
+      "bce": null,
+      "episodes": 512,
+      "hit_rate": 1.0,
+      "seed": 41
+    },
+    {
+      "scenario": "broken_group",
+      "length": 32,
+      "model": "indexed_bit_table_16B",
+      "readout": "exact",
+      "accuracy": 1.0,
+      "bce": null,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "broken_group",
+      "length": 64,
+      "model": "phase_graph",
+      "readout": "ratio",
+      "accuracy": 0.855469,
+      "bce": 0.43533,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "broken_group",
+      "length": 64,
+      "model": "phase_graph",
+      "readout": "paired",
+      "accuracy": 0.744141,
+      "bce": 0.539923,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "broken_group",
+      "length": 64,
+      "model": "phase_graph",
+      "readout": "single",
+      "accuracy": 0.660156,
+      "bce": 0.630131,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "broken_group",
+      "length": 64,
+      "model": "phase_graph",
+      "readout": "fixed_route",
+      "accuracy": 0.525391,
+      "bce": 0.690071,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "broken_group",
+      "length": 64,
+      "model": "phase_graph",
+      "readout": "learned_order_policy",
+      "accuracy": 0.65625,
+      "bce": 0.660893,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "broken_group",
+      "length": 64,
+      "model": "phase_graph",
+      "readout": "direct_addressed",
+      "accuracy": 0.855469,
+      "bce": 0.435068,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "broken_group",
+      "length": 64,
+      "model": "phase_fixed_router",
+      "readout": "ratio",
+      "accuracy": 0.849609,
+      "bce": 0.485655,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "broken_group",
+      "length": 64,
+      "model": "phase_fixed_router",
+      "readout": "paired",
+      "accuracy": 0.703125,
+      "bce": 0.543856,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "broken_group",
+      "length": 64,
+      "model": "phase_fixed_router",
+      "readout": "single",
+      "accuracy": 0.626953,
+      "bce": 0.705024,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "broken_group",
+      "length": 64,
+      "model": "phase_fixed_router",
+      "readout": "fixed_route",
+      "accuracy": 0.53125,
+      "bce": 0.690614,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "broken_group",
+      "length": 64,
+      "model": "phase_fixed_router",
+      "readout": "learned_order_policy",
+      "accuracy": 0.578125,
+      "bce": 0.696314,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "broken_group",
+      "length": 64,
+      "model": "phase_fixed_router",
+      "readout": "direct_addressed",
+      "accuracy": 0.849609,
+      "bce": 0.485805,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "broken_group",
+      "length": 64,
+      "model": "gru",
+      "readout": "gru",
+      "accuracy": 0.535156,
+      "bce": 0.692456,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "broken_group",
+      "length": 64,
+      "model": "fast_weight",
+      "readout": "fast_weight",
+      "accuracy": 0.492188,
+      "bce": 0.695425,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "broken_group",
+      "length": 64,
+      "model": "window_attention",
+      "readout": "attention",
+      "accuracy": 0.769531,
+      "bce": 0.418551,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "broken_group",
+      "length": 64,
+      "model": "exact_window_64B",
+      "readout": "last_match",
+      "accuracy": 0.789062,
+      "bce": null,
+      "episodes": 512,
+      "hit_rate": 0.578125,
+      "seed": 41
+    },
+    {
+      "scenario": "broken_group",
+      "length": 64,
+      "model": "indexed_bit_table_16B",
+      "readout": "exact",
+      "accuracy": 1.0,
+      "bce": null,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "broken_group",
+      "length": 96,
+      "model": "phase_graph",
+      "readout": "ratio",
+      "accuracy": 0.802734,
+      "bce": 0.559256,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "broken_group",
+      "length": 96,
+      "model": "phase_graph",
+      "readout": "paired",
+      "accuracy": 0.671875,
+      "bce": 0.647586,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "broken_group",
+      "length": 96,
+      "model": "phase_graph",
+      "readout": "single",
+      "accuracy": 0.601562,
+      "bce": 0.747038,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "broken_group",
+      "length": 96,
+      "model": "phase_graph",
+      "readout": "fixed_route",
+      "accuracy": 0.519531,
+      "bce": 0.70336,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "broken_group",
+      "length": 96,
+      "model": "phase_graph",
+      "readout": "learned_order_policy",
+      "accuracy": 0.609375,
+      "bce": 0.74995,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "broken_group",
+      "length": 96,
+      "model": "phase_graph",
+      "readout": "direct_addressed",
+      "accuracy": 0.802734,
+      "bce": 0.559082,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "broken_group",
+      "length": 96,
+      "model": "phase_fixed_router",
+      "readout": "ratio",
+      "accuracy": 0.845703,
+      "bce": 0.504749,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "broken_group",
+      "length": 96,
+      "model": "phase_fixed_router",
+      "readout": "paired",
+      "accuracy": 0.701172,
+      "bce": 0.542618,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "broken_group",
+      "length": 96,
+      "model": "phase_fixed_router",
+      "readout": "single",
+      "accuracy": 0.595703,
+      "bce": 0.723504,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "broken_group",
+      "length": 96,
+      "model": "phase_fixed_router",
+      "readout": "fixed_route",
+      "accuracy": 0.505859,
+      "bce": 0.697761,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "broken_group",
+      "length": 96,
+      "model": "phase_fixed_router",
+      "readout": "learned_order_policy",
+      "accuracy": 0.570312,
+      "bce": 0.713607,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "broken_group",
+      "length": 96,
+      "model": "phase_fixed_router",
+      "readout": "direct_addressed",
+      "accuracy": 0.845703,
+      "bce": 0.503331,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "broken_group",
+      "length": 96,
+      "model": "gru",
+      "readout": "gru",
+      "accuracy": 0.533203,
+      "bce": 0.710185,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "broken_group",
+      "length": 96,
+      "model": "fast_weight",
+      "readout": "fast_weight",
+      "accuracy": 0.451172,
+      "bce": 0.696377,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "broken_group",
+      "length": 96,
+      "model": "window_attention",
+      "readout": "attention",
+      "accuracy": 0.707031,
+      "bce": 0.552955,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "broken_group",
+      "length": 96,
+      "model": "exact_window_64B",
+      "readout": "last_match",
+      "accuracy": 0.728516,
+      "bce": null,
+      "episodes": 512,
+      "hit_rate": 0.457031,
+      "seed": 41
+    },
+    {
+      "scenario": "broken_group",
+      "length": 96,
+      "model": "indexed_bit_table_16B",
+      "readout": "exact",
+      "accuracy": 1.0,
+      "bce": null,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "rewrite",
+      "length": 16,
+      "model": "phase_graph",
+      "readout": "ratio",
+      "accuracy": 0.972656,
+      "bce": 0.125822,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "rewrite",
+      "length": 16,
+      "model": "phase_graph",
+      "readout": "paired",
+      "accuracy": 0.947266,
+      "bce": 0.196553,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "rewrite",
+      "length": 16,
+      "model": "phase_graph",
+      "readout": "single",
+      "accuracy": 0.894531,
+      "bce": 0.278445,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "rewrite",
+      "length": 16,
+      "model": "phase_graph",
+      "readout": "fixed_route",
+      "accuracy": 0.582031,
+      "bce": 0.675988,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "rewrite",
+      "length": 16,
+      "model": "phase_graph",
+      "readout": "learned_order_policy",
+      "accuracy": 0.861328,
+      "bce": 0.396999,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "rewrite",
+      "length": 16,
+      "model": "phase_graph",
+      "readout": "direct_addressed",
+      "accuracy": 0.972656,
+      "bce": 0.125453,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "rewrite",
+      "length": 16,
+      "model": "phase_fixed_router",
+      "readout": "ratio",
+      "accuracy": 1.0,
+      "bce": 0.057848,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "rewrite",
+      "length": 16,
+      "model": "phase_fixed_router",
+      "readout": "paired",
+      "accuracy": 0.951172,
+      "bce": 0.177528,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "rewrite",
+      "length": 16,
+      "model": "phase_fixed_router",
+      "readout": "single",
+      "accuracy": 0.871094,
+      "bce": 0.320636,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "rewrite",
+      "length": 16,
+      "model": "phase_fixed_router",
+      "readout": "fixed_route",
+      "accuracy": 0.5625,
+      "bce": 0.684407,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "rewrite",
+      "length": 16,
+      "model": "phase_fixed_router",
+      "readout": "learned_order_policy",
+      "accuracy": 0.818359,
+      "bce": 0.437463,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "rewrite",
+      "length": 16,
+      "model": "phase_fixed_router",
+      "readout": "direct_addressed",
+      "accuracy": 1.0,
+      "bce": 0.057052,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "rewrite",
+      "length": 16,
+      "model": "gru",
+      "readout": "gru",
+      "accuracy": 0.503906,
+      "bce": 0.713935,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "rewrite",
+      "length": 16,
+      "model": "fast_weight",
+      "readout": "fast_weight",
+      "accuracy": 0.470703,
+      "bce": 0.69457,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "rewrite",
+      "length": 16,
+      "model": "window_attention",
+      "readout": "attention",
+      "accuracy": 0.767578,
+      "bce": 0.545273,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "rewrite",
+      "length": 16,
+      "model": "exact_window_64B",
+      "readout": "last_match",
+      "accuracy": 1.0,
+      "bce": null,
+      "episodes": 512,
+      "hit_rate": 1.0,
+      "seed": 41
+    },
+    {
+      "scenario": "rewrite",
+      "length": 16,
+      "model": "indexed_bit_table_16B",
+      "readout": "exact",
+      "accuracy": 1.0,
+      "bce": null,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "rewrite",
+      "length": 32,
+      "model": "phase_graph",
+      "readout": "ratio",
+      "accuracy": 0.966797,
+      "bce": 0.127082,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "rewrite",
+      "length": 32,
+      "model": "phase_graph",
+      "readout": "paired",
+      "accuracy": 0.902344,
+      "bce": 0.250831,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "rewrite",
+      "length": 32,
+      "model": "phase_graph",
+      "readout": "single",
+      "accuracy": 0.824219,
+      "bce": 0.382237,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "rewrite",
+      "length": 32,
+      "model": "phase_graph",
+      "readout": "fixed_route",
+      "accuracy": 0.535156,
+      "bce": 0.696275,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "rewrite",
+      "length": 32,
+      "model": "phase_graph",
+      "readout": "learned_order_policy",
+      "accuracy": 0.755859,
+      "bce": 0.509729,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "rewrite",
+      "length": 32,
+      "model": "phase_graph",
+      "readout": "direct_addressed",
+      "accuracy": 0.966797,
+      "bce": 0.126635,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "rewrite",
+      "length": 32,
+      "model": "phase_fixed_router",
+      "readout": "ratio",
+      "accuracy": 1.0,
+      "bce": 0.057307,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "rewrite",
+      "length": 32,
+      "model": "phase_fixed_router",
+      "readout": "paired",
+      "accuracy": 0.869141,
+      "bce": 0.256243,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "rewrite",
+      "length": 32,
+      "model": "phase_fixed_router",
+      "readout": "single",
+      "accuracy": 0.785156,
+      "bce": 0.465069,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "rewrite",
+      "length": 32,
+      "model": "phase_fixed_router",
+      "readout": "fixed_route",
+      "accuracy": 0.523438,
+      "bce": 0.69443,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "rewrite",
+      "length": 32,
+      "model": "phase_fixed_router",
+      "readout": "learned_order_policy",
+      "accuracy": 0.685547,
+      "bce": 0.54102,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "rewrite",
+      "length": 32,
+      "model": "phase_fixed_router",
+      "readout": "direct_addressed",
+      "accuracy": 1.0,
+      "bce": 0.056622,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "rewrite",
+      "length": 32,
+      "model": "gru",
+      "readout": "gru",
+      "accuracy": 0.517578,
+      "bce": 0.69698,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "rewrite",
+      "length": 32,
+      "model": "fast_weight",
+      "readout": "fast_weight",
+      "accuracy": 0.492188,
+      "bce": 0.693586,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "rewrite",
+      "length": 32,
+      "model": "window_attention",
+      "readout": "attention",
+      "accuracy": 0.71875,
+      "bce": 0.562845,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "rewrite",
+      "length": 32,
+      "model": "exact_window_64B",
+      "readout": "last_match",
+      "accuracy": 1.0,
+      "bce": null,
+      "episodes": 512,
+      "hit_rate": 1.0,
+      "seed": 41
+    },
+    {
+      "scenario": "rewrite",
+      "length": 32,
+      "model": "indexed_bit_table_16B",
+      "readout": "exact",
+      "accuracy": 1.0,
+      "bce": null,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "rewrite",
+      "length": 64,
+      "model": "phase_graph",
+      "readout": "ratio",
+      "accuracy": 0.955078,
+      "bce": 0.152322,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "rewrite",
+      "length": 64,
+      "model": "phase_graph",
+      "readout": "paired",
+      "accuracy": 0.828125,
+      "bce": 0.35835,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "rewrite",
+      "length": 64,
+      "model": "phase_graph",
+      "readout": "single",
+      "accuracy": 0.734375,
+      "bce": 0.519115,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "rewrite",
+      "length": 64,
+      "model": "phase_graph",
+      "readout": "fixed_route",
+      "accuracy": 0.501953,
+      "bce": 0.692013,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "rewrite",
+      "length": 64,
+      "model": "phase_graph",
+      "readout": "learned_order_policy",
+      "accuracy": 0.683594,
+      "bce": 0.61358,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "rewrite",
+      "length": 64,
+      "model": "phase_graph",
+      "readout": "direct_addressed",
+      "accuracy": 0.955078,
+      "bce": 0.151437,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "rewrite",
+      "length": 64,
+      "model": "phase_fixed_router",
+      "readout": "ratio",
+      "accuracy": 1.0,
+      "bce": 0.057397,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "rewrite",
+      "length": 64,
+      "model": "phase_fixed_router",
+      "readout": "paired",
+      "accuracy": 0.808594,
+      "bce": 0.328711,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "rewrite",
+      "length": 64,
+      "model": "phase_fixed_router",
+      "readout": "single",
+      "accuracy": 0.699219,
+      "bce": 0.592286,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "rewrite",
+      "length": 64,
+      "model": "phase_fixed_router",
+      "readout": "fixed_route",
+      "accuracy": 0.513672,
+      "bce": 0.694553,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "rewrite",
+      "length": 64,
+      "model": "phase_fixed_router",
+      "readout": "learned_order_policy",
+      "accuracy": 0.609375,
+      "bce": 0.634463,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "rewrite",
+      "length": 64,
+      "model": "phase_fixed_router",
+      "readout": "direct_addressed",
+      "accuracy": 1.0,
+      "bce": 0.056694,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "rewrite",
+      "length": 64,
+      "model": "gru",
+      "readout": "gru",
+      "accuracy": 0.541016,
+      "bce": 0.691624,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "rewrite",
+      "length": 64,
+      "model": "fast_weight",
+      "readout": "fast_weight",
+      "accuracy": 0.494141,
+      "bce": 0.693049,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "rewrite",
+      "length": 64,
+      "model": "window_attention",
+      "readout": "attention",
+      "accuracy": 0.806641,
+      "bce": 0.37386,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "rewrite",
+      "length": 64,
+      "model": "exact_window_64B",
+      "readout": "last_match",
+      "accuracy": 1.0,
+      "bce": null,
+      "episodes": 512,
+      "hit_rate": 1.0,
+      "seed": 41
+    },
+    {
+      "scenario": "rewrite",
+      "length": 64,
+      "model": "indexed_bit_table_16B",
+      "readout": "exact",
+      "accuracy": 1.0,
+      "bce": null,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "rewrite",
+      "length": 96,
+      "model": "phase_graph",
+      "readout": "ratio",
+      "accuracy": 0.980469,
+      "bce": 0.117844,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "rewrite",
+      "length": 96,
+      "model": "phase_graph",
+      "readout": "paired",
+      "accuracy": 0.806641,
+      "bce": 0.372853,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "rewrite",
+      "length": 96,
+      "model": "phase_graph",
+      "readout": "single",
+      "accuracy": 0.677734,
+      "bce": 0.558519,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "rewrite",
+      "length": 96,
+      "model": "phase_graph",
+      "readout": "fixed_route",
+      "accuracy": 0.574219,
+      "bce": 0.686064,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "rewrite",
+      "length": 96,
+      "model": "phase_graph",
+      "readout": "learned_order_policy",
+      "accuracy": 0.667969,
+      "bce": 0.649814,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "rewrite",
+      "length": 96,
+      "model": "phase_graph",
+      "readout": "direct_addressed",
+      "accuracy": 0.980469,
+      "bce": 0.117513,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "rewrite",
+      "length": 96,
+      "model": "phase_fixed_router",
+      "readout": "ratio",
+      "accuracy": 1.0,
+      "bce": 0.057397,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "rewrite",
+      "length": 96,
+      "model": "phase_fixed_router",
+      "readout": "paired",
+      "accuracy": 0.71875,
+      "bce": 0.423511,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "rewrite",
+      "length": 96,
+      "model": "phase_fixed_router",
+      "readout": "single",
+      "accuracy": 0.609375,
+      "bce": 0.745198,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "rewrite",
+      "length": 96,
+      "model": "phase_fixed_router",
+      "readout": "fixed_route",
+      "accuracy": 0.539062,
+      "bce": 0.693011,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "rewrite",
+      "length": 96,
+      "model": "phase_fixed_router",
+      "readout": "learned_order_policy",
+      "accuracy": 0.529297,
+      "bce": 0.73113,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "rewrite",
+      "length": 96,
+      "model": "phase_fixed_router",
+      "readout": "direct_addressed",
+      "accuracy": 1.0,
+      "bce": 0.056694,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "rewrite",
+      "length": 96,
+      "model": "gru",
+      "readout": "gru",
+      "accuracy": 0.53125,
+      "bce": 0.692973,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "rewrite",
+      "length": 96,
+      "model": "fast_weight",
+      "readout": "fast_weight",
+      "accuracy": 0.486328,
+      "bce": 0.694395,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "rewrite",
+      "length": 96,
+      "model": "window_attention",
+      "readout": "attention",
+      "accuracy": 0.882812,
+      "bce": 0.276618,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "rewrite",
+      "length": 96,
+      "model": "exact_window_64B",
+      "readout": "last_match",
+      "accuracy": 1.0,
+      "bce": null,
+      "episodes": 512,
+      "hit_rate": 1.0,
+      "seed": 41
+    },
+    {
+      "scenario": "rewrite",
+      "length": 96,
+      "model": "indexed_bit_table_16B",
+      "readout": "exact",
+      "accuracy": 1.0,
+      "bce": null,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped16",
+      "length": 16,
+      "model": "phase_graph",
+      "readout": "ratio",
+      "accuracy": 0.921875,
+      "bce": 0.221807,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped16",
+      "length": 16,
+      "model": "phase_graph",
+      "readout": "paired",
+      "accuracy": 0.910156,
+      "bce": 0.269367,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped16",
+      "length": 16,
+      "model": "phase_graph",
+      "readout": "single",
+      "accuracy": 0.845703,
+      "bce": 0.339532,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped16",
+      "length": 16,
+      "model": "phase_graph",
+      "readout": "fixed_route",
+      "accuracy": 0.646484,
+      "bce": 0.648088,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped16",
+      "length": 16,
+      "model": "phase_graph",
+      "readout": "learned_order_policy",
+      "accuracy": 0.822266,
+      "bce": 0.438903,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped16",
+      "length": 16,
+      "model": "phase_graph",
+      "readout": "direct_addressed",
+      "accuracy": 0.921875,
+      "bce": 0.220857,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped16",
+      "length": 16,
+      "model": "phase_fixed_router",
+      "readout": "ratio",
+      "accuracy": 0.962891,
+      "bce": 0.164114,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped16",
+      "length": 16,
+      "model": "phase_fixed_router",
+      "readout": "paired",
+      "accuracy": 0.902344,
+      "bce": 0.258755,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped16",
+      "length": 16,
+      "model": "phase_fixed_router",
+      "readout": "single",
+      "accuracy": 0.837891,
+      "bce": 0.379448,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped16",
+      "length": 16,
+      "model": "phase_fixed_router",
+      "readout": "fixed_route",
+      "accuracy": 0.634766,
+      "bce": 0.660536,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped16",
+      "length": 16,
+      "model": "phase_fixed_router",
+      "readout": "learned_order_policy",
+      "accuracy": 0.798828,
+      "bce": 0.461076,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped16",
+      "length": 16,
+      "model": "phase_fixed_router",
+      "readout": "direct_addressed",
+      "accuracy": 0.962891,
+      "bce": 0.163411,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped16",
+      "length": 16,
+      "model": "gru",
+      "readout": "gru",
+      "accuracy": 0.664062,
+      "bce": 0.619726,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped16",
+      "length": 16,
+      "model": "fast_weight",
+      "readout": "fast_weight",
+      "accuracy": 0.464844,
+      "bce": 0.694731,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped16",
+      "length": 16,
+      "model": "window_attention",
+      "readout": "attention",
+      "accuracy": 1.0,
+      "bce": 0.032444,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped16",
+      "length": 16,
+      "model": "exact_window_64B",
+      "readout": "last_match",
+      "accuracy": 1.0,
+      "bce": null,
+      "episodes": 512,
+      "hit_rate": 1.0,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped16",
+      "length": 16,
+      "model": "indexed_bit_table_16B",
+      "readout": "exact",
+      "accuracy": 1.0,
+      "bce": null,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped16",
+      "length": 32,
+      "model": "phase_graph",
+      "readout": "ratio",
+      "accuracy": 0.919922,
+      "bce": 0.253848,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped16",
+      "length": 32,
+      "model": "phase_graph",
+      "readout": "paired",
+      "accuracy": 0.835938,
+      "bce": 0.366701,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped16",
+      "length": 32,
+      "model": "phase_graph",
+      "readout": "single",
+      "accuracy": 0.769531,
+      "bce": 0.456307,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped16",
+      "length": 32,
+      "model": "phase_graph",
+      "readout": "fixed_route",
+      "accuracy": 0.623047,
+      "bce": 0.656571,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped16",
+      "length": 32,
+      "model": "phase_graph",
+      "readout": "learned_order_policy",
+      "accuracy": 0.755859,
+      "bce": 0.523052,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped16",
+      "length": 32,
+      "model": "phase_graph",
+      "readout": "direct_addressed",
+      "accuracy": 0.919922,
+      "bce": 0.253138,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped16",
+      "length": 32,
+      "model": "phase_fixed_router",
+      "readout": "ratio",
+      "accuracy": 0.9375,
+      "bce": 0.239549,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped16",
+      "length": 32,
+      "model": "phase_fixed_router",
+      "readout": "paired",
+      "accuracy": 0.853516,
+      "bce": 0.334435,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped16",
+      "length": 32,
+      "model": "phase_fixed_router",
+      "readout": "single",
+      "accuracy": 0.767578,
+      "bce": 0.468418,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped16",
+      "length": 32,
+      "model": "phase_fixed_router",
+      "readout": "fixed_route",
+      "accuracy": 0.597656,
+      "bce": 0.672243,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped16",
+      "length": 32,
+      "model": "phase_fixed_router",
+      "readout": "learned_order_policy",
+      "accuracy": 0.720703,
+      "bce": 0.52328,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped16",
+      "length": 32,
+      "model": "phase_fixed_router",
+      "readout": "direct_addressed",
+      "accuracy": 0.9375,
+      "bce": 0.238369,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped16",
+      "length": 32,
+      "model": "gru",
+      "readout": "gru",
+      "accuracy": 0.619141,
+      "bce": 0.650264,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped16",
+      "length": 32,
+      "model": "fast_weight",
+      "readout": "fast_weight",
+      "accuracy": 0.490234,
+      "bce": 0.693576,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped16",
+      "length": 32,
+      "model": "window_attention",
+      "readout": "attention",
+      "accuracy": 1.0,
+      "bce": 0.040183,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped16",
+      "length": 32,
+      "model": "exact_window_64B",
+      "readout": "last_match",
+      "accuracy": 1.0,
+      "bce": null,
+      "episodes": 512,
+      "hit_rate": 1.0,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped16",
+      "length": 32,
+      "model": "indexed_bit_table_16B",
+      "readout": "exact",
+      "accuracy": 1.0,
+      "bce": null,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped16",
+      "length": 64,
+      "model": "phase_graph",
+      "readout": "ratio",
+      "accuracy": 0.880859,
+      "bce": 0.368238,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped16",
+      "length": 64,
+      "model": "phase_graph",
+      "readout": "paired",
+      "accuracy": 0.740234,
+      "bce": 0.510809,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped16",
+      "length": 64,
+      "model": "phase_graph",
+      "readout": "single",
+      "accuracy": 0.685547,
+      "bce": 0.593254,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped16",
+      "length": 64,
+      "model": "phase_graph",
+      "readout": "fixed_route",
+      "accuracy": 0.636719,
+      "bce": 0.648172,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped16",
+      "length": 64,
+      "model": "phase_graph",
+      "readout": "learned_order_policy",
+      "accuracy": 0.703125,
+      "bce": 0.604587,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped16",
+      "length": 64,
+      "model": "phase_graph",
+      "readout": "direct_addressed",
+      "accuracy": 0.880859,
+      "bce": 0.367962,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped16",
+      "length": 64,
+      "model": "phase_fixed_router",
+      "readout": "ratio",
+      "accuracy": 0.90625,
+      "bce": 0.328086,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped16",
+      "length": 64,
+      "model": "phase_fixed_router",
+      "readout": "paired",
+      "accuracy": 0.744141,
+      "bce": 0.46953,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped16",
+      "length": 64,
+      "model": "phase_fixed_router",
+      "readout": "single",
+      "accuracy": 0.669922,
+      "bce": 0.647885,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped16",
+      "length": 64,
+      "model": "phase_fixed_router",
+      "readout": "fixed_route",
+      "accuracy": 0.605469,
+      "bce": 0.668042,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped16",
+      "length": 64,
+      "model": "phase_fixed_router",
+      "readout": "learned_order_policy",
+      "accuracy": 0.621094,
+      "bce": 0.647432,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped16",
+      "length": 64,
+      "model": "phase_fixed_router",
+      "readout": "direct_addressed",
+      "accuracy": 0.90625,
+      "bce": 0.327173,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped16",
+      "length": 64,
+      "model": "gru",
+      "readout": "gru",
+      "accuracy": 0.675781,
+      "bce": 0.620938,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped16",
+      "length": 64,
+      "model": "fast_weight",
+      "readout": "fast_weight",
+      "accuracy": 0.46875,
+      "bce": 0.694207,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped16",
+      "length": 64,
+      "model": "window_attention",
+      "readout": "attention",
+      "accuracy": 0.849609,
+      "bce": 0.346313,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped16",
+      "length": 64,
+      "model": "exact_window_64B",
+      "readout": "last_match",
+      "accuracy": 0.81543,
+      "bce": null,
+      "episodes": 512,
+      "hit_rate": 0.630859,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped16",
+      "length": 64,
+      "model": "indexed_bit_table_16B",
+      "readout": "exact",
+      "accuracy": 1.0,
+      "bce": null,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped16",
+      "length": 96,
+      "model": "phase_graph",
+      "readout": "ratio",
+      "accuracy": 0.841797,
+      "bce": 0.449151,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped16",
+      "length": 96,
+      "model": "phase_graph",
+      "readout": "paired",
+      "accuracy": 0.720703,
+      "bce": 0.541736,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped16",
+      "length": 96,
+      "model": "phase_graph",
+      "readout": "single",
+      "accuracy": 0.667969,
+      "bce": 0.632158,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped16",
+      "length": 96,
+      "model": "phase_graph",
+      "readout": "fixed_route",
+      "accuracy": 0.623047,
+      "bce": 0.647639,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped16",
+      "length": 96,
+      "model": "phase_graph",
+      "readout": "learned_order_policy",
+      "accuracy": 0.669922,
+      "bce": 0.647054,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped16",
+      "length": 96,
+      "model": "phase_graph",
+      "readout": "direct_addressed",
+      "accuracy": 0.841797,
+      "bce": 0.448897,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped16",
+      "length": 96,
+      "model": "phase_fixed_router",
+      "readout": "ratio",
+      "accuracy": 0.865234,
+      "bce": 0.438431,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped16",
+      "length": 96,
+      "model": "phase_fixed_router",
+      "readout": "paired",
+      "accuracy": 0.667969,
+      "bce": 0.552278,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped16",
+      "length": 96,
+      "model": "phase_fixed_router",
+      "readout": "single",
+      "accuracy": 0.615234,
+      "bce": 0.734848,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped16",
+      "length": 96,
+      "model": "phase_fixed_router",
+      "readout": "fixed_route",
+      "accuracy": 0.576172,
+      "bce": 0.671875,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped16",
+      "length": 96,
+      "model": "phase_fixed_router",
+      "readout": "learned_order_policy",
+      "accuracy": 0.585938,
+      "bce": 0.681407,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped16",
+      "length": 96,
+      "model": "phase_fixed_router",
+      "readout": "direct_addressed",
+      "accuracy": 0.865234,
+      "bce": 0.439043,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped16",
+      "length": 96,
+      "model": "gru",
+      "readout": "gru",
+      "accuracy": 0.650391,
+      "bce": 0.631229,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped16",
+      "length": 96,
+      "model": "fast_weight",
+      "readout": "fast_weight",
+      "accuracy": 0.53125,
+      "bce": 0.691297,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped16",
+      "length": 96,
+      "model": "window_attention",
+      "readout": "attention",
+      "accuracy": 0.833984,
+      "bce": 0.370454,
+      "episodes": 512,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped16",
+      "length": 96,
+      "model": "exact_window_64B",
+      "readout": "last_match",
+      "accuracy": 0.742188,
+      "bce": null,
+      "episodes": 512,
+      "hit_rate": 0.484375,
+      "seed": 41
+    },
+    {
+      "scenario": "grouped16",
+      "length": 96,
+      "model": "indexed_bit_table_16B",
+      "readout": "exact",
+      "accuracy": 1.0,
+      "bce": null,
+      "episodes": 512,
+      "seed": 41
+    }
+  ],
+  "caveats": [
+    "Learned router over a fixed known 128-key universe; not OOD key generalization.",
+    "Coherent soft mixtures over 63 paths; counts as many path contributions, not one physical launch.",
+    "Two complex end-port features, potentially greater read compute than a direct 64-byte address.",
+    "Synthetic binary fact retrieval, NOT language modelling or Transformer replacement.",
+    "64-byte phase, GRU, fast weights and token tape; shared checkpoint parameters reported separately.",
+    "Exact 16-byte indexed oracle exists because key domain is public and known.",
+    "Reader comparisons share the trained phase writer, but this is not matched-FLOP training.",
+    "Training alternates independent and grouped streams; broken-group is evaluation-only.",
+    "Grouped labels remain fixed within an episode; no unobserved group inference is attempted."
+  ]
+}

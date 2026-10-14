@@ -2,6 +2,25 @@
 
 **Status: Gate 0 implemented and run; architectural hypothesis OPEN.**
 
+
+## Gate 1 (October 14): the learned routing hypothesis failed its first pilot
+
+**[Explore the Gate 1 interactive results](gate1.html)** · [Gate 1 protocol](GATE1_PROTOCOL.md) · [Three-seed machine-readable summary](results/gate1/pilot350/summary.json) · [Source and trainer](train_gate1.py)
+
+Gate 1 now implements a **trainable online writer**, an actual 64-byte quantized phase memory and **query-conditioned route/order policy**, plus a separate identical-initialization frozen-route control. Trained comparison arms are a 64-byte GRU, fast-weight matrix and 32-record attention reader. Strong deterministic controls are a 64-byte exact last-write window and a **16-byte** exact indexed bit table (possible because the 128-key domain is known). Each write round-trips through 8-bit quantization.
+
+The 350-step exploratory CPU pilot has three independent seeds, 512 held-out streams per scenario/length/seed, multiple unseen sequence lengths, and forced key rewrites. **At 64 independent writes, the learned graph-ratio head averages 82.36%, the same-initialization frozen-router head 86.26%, learned KV-style attention 77.73%, exact 64-byte 32-record window 80.53%, and exact 16-byte bit table 100%.** The frozen router wins every pilot seed. The graph's ratio observation is algebraically equivalent to directly reading the addressed phase (numerical discrepancy around 1e-6 or lower), at much greater path computation cost. **No learned-geometry gain is demonstrated.** A trained question-dependent order mixture also failed to improve on ratio/direct. These findings are *not* evidence that Transformers are obsolete.
+
+This is an initial mechanistic training test, not a completed architecture bake-off: no full causal Transformer, no matched-FLOP allocation, fixed known keys, no online feedback after probe responses, and no natural images. It provides a working instrument for the next experimental gate. To reproduce:
+
+```bash
+python -m pip install -r requirements-gate1.txt
+python -m unittest discover -s tests -v
+python train_gate1.py --steps 350 --batch 64 --length 24 --eval-cases 512 --seeds 41 97 127 --device auto --out results/gate1/reproduced350
+```
+
+**Gate 0 (unchanged):** The original deterministic capacity and common-path cancellation controls follow below.
+
 Two related October 2026 projects provide a motivating observation:
 [SihtiResponseGraph](https://github.com/anttiluode/SihtiResponseGraph) writes synthetic image information into queryable conductances; [SihtiGrapImageModel](https://github.com/anttiluode/SihtiGrapImageModel) writes 64-byte phase maps and verifies exact common-path cancellation for ordered unitary probes. These are real *toy-model* measurements, not evidence that Transformers have ended.
 

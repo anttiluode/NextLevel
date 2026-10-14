@@ -1,0 +1,4157 @@
+{
+  "status": "exploratory 350-step pilot, NOT preregistered or a Transformer comparison",
+  "seed_count": 3,
+  "seeds": [
+    41,
+    97,
+    127
+  ],
+  "training": {
+    "steps": 350,
+    "batch_size": 64,
+    "sequence_length": 24,
+    "train_distribution": "alternating independent/grouped8",
+    "test_episodes_per_scenario_length_seed": 512
+  },
+  "readers": {
+    "phase_graph:ratio": "64B learned phase writer and query-selected ratio read",
+    "phase_fixed_router:ratio": "64B same-initialized but frozen writer/read routes",
+    "phase_graph:direct_addressed": "64B read one source phase directly (stronger access, same value as ratio)",
+    "phase_graph:paired": "64B two full ordered complex waves",
+    "phase_graph:learned_order_policy": "64B query-conditioned AB/BA mixture",
+    "phase_graph:fixed_route": "64B query-independent path mixture",
+    "window_attention:attention": "64B learned attention reader over last 32 raw records",
+    "exact_window_64B:last_match": "64B latest exact matching record within last32",
+    "gru:gru": "64B trained GRU",
+    "fast_weight:fast_weight": "64B trained fast-weight matrix",
+    "indexed_bit_table_16B:exact": "16B oracle exact known-key table"
+  },
+  "mean_records": [
+    {
+      "scenario": "broken_group",
+      "length": 16,
+      "model": "exact_window_64B",
+      "readout": "last_match",
+      "accuracy_mean": 1.0,
+      "accuracy_range": [
+        1.0,
+        1.0
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "broken_group",
+      "length": 16,
+      "model": "fast_weight",
+      "readout": "fast_weight",
+      "accuracy_mean": 0.524089,
+      "accuracy_range": [
+        0.515625,
+        0.529297
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "broken_group",
+      "length": 16,
+      "model": "gru",
+      "readout": "gru",
+      "accuracy_mean": 0.593099,
+      "accuracy_range": [
+        0.582031,
+        0.605469
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "broken_group",
+      "length": 16,
+      "model": "indexed_bit_table_16B",
+      "readout": "exact",
+      "accuracy_mean": 1.0,
+      "accuracy_range": [
+        1.0,
+        1.0
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "broken_group",
+      "length": 16,
+      "model": "phase_fixed_router",
+      "readout": "direct_addressed",
+      "accuracy_mean": 0.954427,
+      "accuracy_range": [
+        0.947266,
+        0.958984
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "broken_group",
+      "length": 16,
+      "model": "phase_fixed_router",
+      "readout": "fixed_route",
+      "accuracy_mean": 0.546875,
+      "accuracy_range": [
+        0.525391,
+        0.568359
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "broken_group",
+      "length": 16,
+      "model": "phase_fixed_router",
+      "readout": "learned_order_policy",
+      "accuracy_mean": 0.764323,
+      "accuracy_range": [
+        0.748047,
+        0.775391
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "broken_group",
+      "length": 16,
+      "model": "phase_fixed_router",
+      "readout": "paired",
+      "accuracy_mean": 0.916667,
+      "accuracy_range": [
+        0.902344,
+        0.923828
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "broken_group",
+      "length": 16,
+      "model": "phase_fixed_router",
+      "readout": "ratio",
+      "accuracy_mean": 0.954427,
+      "accuracy_range": [
+        0.947266,
+        0.958984
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "broken_group",
+      "length": 16,
+      "model": "phase_fixed_router",
+      "readout": "single",
+      "accuracy_mean": 0.823568,
+      "accuracy_range": [
+        0.802734,
+        0.839844
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "broken_group",
+      "length": 16,
+      "model": "phase_graph",
+      "readout": "direct_addressed",
+      "accuracy_mean": 0.917318,
+      "accuracy_range": [
+        0.892578,
+        0.931641
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "broken_group",
+      "length": 16,
+      "model": "phase_graph",
+      "readout": "fixed_route",
+      "accuracy_mean": 0.558594,
+      "accuracy_range": [
+        0.533203,
+        0.583984
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "broken_group",
+      "length": 16,
+      "model": "phase_graph",
+      "readout": "learned_order_policy",
+      "accuracy_mean": 0.71875,
+      "accuracy_range": [
+        0.681641,
+        0.785156
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "broken_group",
+      "length": 16,
+      "model": "phase_graph",
+      "readout": "paired",
+      "accuracy_mean": 0.913412,
+      "accuracy_range": [
+        0.908203,
+        0.916016
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "broken_group",
+      "length": 16,
+      "model": "phase_graph",
+      "readout": "ratio",
+      "accuracy_mean": 0.917318,
+      "accuracy_range": [
+        0.892578,
+        0.931641
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "broken_group",
+      "length": 16,
+      "model": "phase_graph",
+      "readout": "single",
+      "accuracy_mean": 0.786458,
+      "accuracy_range": [
+        0.732422,
+        0.857422
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "broken_group",
+      "length": 16,
+      "model": "window_attention",
+      "readout": "attention",
+      "accuracy_mean": 0.975911,
+      "accuracy_range": [
+        0.974609,
+        0.976562
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "broken_group",
+      "length": 32,
+      "model": "exact_window_64B",
+      "readout": "last_match",
+      "accuracy_mean": 1.0,
+      "accuracy_range": [
+        1.0,
+        1.0
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "broken_group",
+      "length": 32,
+      "model": "fast_weight",
+      "readout": "fast_weight",
+      "accuracy_mean": 0.50651,
+      "accuracy_range": [
+        0.498047,
+        0.513672
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "broken_group",
+      "length": 32,
+      "model": "gru",
+      "readout": "gru",
+      "accuracy_mean": 0.547526,
+      "accuracy_range": [
+        0.515625,
+        0.566406
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "broken_group",
+      "length": 32,
+      "model": "indexed_bit_table_16B",
+      "readout": "exact",
+      "accuracy_mean": 1.0,
+      "accuracy_range": [
+        1.0,
+        1.0
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "broken_group",
+      "length": 32,
+      "model": "phase_fixed_router",
+      "readout": "direct_addressed",
+      "accuracy_mean": 0.921875,
+      "accuracy_range": [
+        0.910156,
+        0.935547
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "broken_group",
+      "length": 32,
+      "model": "phase_fixed_router",
+      "readout": "fixed_route",
+      "accuracy_mean": 0.503906,
+      "accuracy_range": [
+        0.490234,
+        0.511719
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "broken_group",
+      "length": 32,
+      "model": "phase_fixed_router",
+      "readout": "learned_order_policy",
+      "accuracy_mean": 0.654948,
+      "accuracy_range": [
+        0.646484,
+        0.666016
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "broken_group",
+      "length": 32,
+      "model": "phase_fixed_router",
+      "readout": "paired",
+      "accuracy_mean": 0.853516,
+      "accuracy_range": [
+        0.824219,
+        0.90625
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "broken_group",
+      "length": 32,
+      "model": "phase_fixed_router",
+      "readout": "ratio",
+      "accuracy_mean": 0.921875,
+      "accuracy_range": [
+        0.910156,
+        0.935547
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "broken_group",
+      "length": 32,
+      "model": "phase_fixed_router",
+      "readout": "single",
+      "accuracy_mean": 0.710938,
+      "accuracy_range": [
+        0.701172,
+        0.716797
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "broken_group",
+      "length": 32,
+      "model": "phase_graph",
+      "readout": "direct_addressed",
+      "accuracy_mean": 0.878906,
+      "accuracy_range": [
+        0.857422,
+        0.902344
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "broken_group",
+      "length": 32,
+      "model": "phase_graph",
+      "readout": "fixed_route",
+      "accuracy_mean": 0.509114,
+      "accuracy_range": [
+        0.486328,
+        0.535156
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "broken_group",
+      "length": 32,
+      "model": "phase_graph",
+      "readout": "learned_order_policy",
+      "accuracy_mean": 0.625651,
+      "accuracy_range": [
+        0.59375,
+        0.660156
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "broken_group",
+      "length": 32,
+      "model": "phase_graph",
+      "readout": "paired",
+      "accuracy_mean": 0.858073,
+      "accuracy_range": [
+        0.816406,
+        0.890625
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "broken_group",
+      "length": 32,
+      "model": "phase_graph",
+      "readout": "ratio",
+      "accuracy_mean": 0.878906,
+      "accuracy_range": [
+        0.857422,
+        0.902344
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "broken_group",
+      "length": 32,
+      "model": "phase_graph",
+      "readout": "single",
+      "accuracy_mean": 0.695964,
+      "accuracy_range": [
+        0.652344,
+        0.742188
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "broken_group",
+      "length": 32,
+      "model": "window_attention",
+      "readout": "attention",
+      "accuracy_mean": 0.965495,
+      "accuracy_range": [
+        0.953125,
+        0.974609
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "broken_group",
+      "length": 64,
+      "model": "exact_window_64B",
+      "readout": "last_match",
+      "accuracy_mean": 0.806966,
+      "accuracy_range": [
+        0.789062,
+        0.830078
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "broken_group",
+      "length": 64,
+      "model": "fast_weight",
+      "readout": "fast_weight",
+      "accuracy_mean": 0.48112,
+      "accuracy_range": [
+        0.472656,
+        0.492188
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "broken_group",
+      "length": 64,
+      "model": "gru",
+      "readout": "gru",
+      "accuracy_mean": 0.526693,
+      "accuracy_range": [
+        0.503906,
+        0.541016
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "broken_group",
+      "length": 64,
+      "model": "indexed_bit_table_16B",
+      "readout": "exact",
+      "accuracy_mean": 1.0,
+      "accuracy_range": [
+        1.0,
+        1.0
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "broken_group",
+      "length": 64,
+      "model": "phase_fixed_router",
+      "readout": "direct_addressed",
+      "accuracy_mean": 0.858724,
+      "accuracy_range": [
+        0.849609,
+        0.869141
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "broken_group",
+      "length": 64,
+      "model": "phase_fixed_router",
+      "readout": "fixed_route",
+      "accuracy_mean": 0.516276,
+      "accuracy_range": [
+        0.507812,
+        0.53125
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "broken_group",
+      "length": 64,
+      "model": "phase_fixed_router",
+      "readout": "learned_order_policy",
+      "accuracy_mean": 0.582031,
+      "accuracy_range": [
+        0.544922,
+        0.623047
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "broken_group",
+      "length": 64,
+      "model": "phase_fixed_router",
+      "readout": "paired",
+      "accuracy_mean": 0.753906,
+      "accuracy_range": [
+        0.703125,
+        0.787109
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "broken_group",
+      "length": 64,
+      "model": "phase_fixed_router",
+      "readout": "ratio",
+      "accuracy_mean": 0.858724,
+      "accuracy_range": [
+        0.849609,
+        0.869141
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "broken_group",
+      "length": 64,
+      "model": "phase_fixed_router",
+      "readout": "single",
+      "accuracy_mean": 0.634115,
+      "accuracy_range": [
+        0.607422,
+        0.667969
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "broken_group",
+      "length": 64,
+      "model": "phase_graph",
+      "readout": "direct_addressed",
+      "accuracy_mean": 0.847005,
+      "accuracy_range": [
+        0.841797,
+        0.855469
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "broken_group",
+      "length": 64,
+      "model": "phase_graph",
+      "readout": "fixed_route",
+      "accuracy_mean": 0.513021,
+      "accuracy_range": [
+        0.498047,
+        0.525391
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "broken_group",
+      "length": 64,
+      "model": "phase_graph",
+      "readout": "learned_order_policy",
+      "accuracy_mean": 0.586589,
+      "accuracy_range": [
+        0.542969,
+        0.65625
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "broken_group",
+      "length": 64,
+      "model": "phase_graph",
+      "readout": "paired",
+      "accuracy_mean": 0.810547,
+      "accuracy_range": [
+        0.744141,
+        0.845703
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "broken_group",
+      "length": 64,
+      "model": "phase_graph",
+      "readout": "ratio",
+      "accuracy_mean": 0.847005,
+      "accuracy_range": [
+        0.841797,
+        0.855469
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "broken_group",
+      "length": 64,
+      "model": "phase_graph",
+      "readout": "single",
+      "accuracy_mean": 0.61849,
+      "accuracy_range": [
+        0.585938,
+        0.660156
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "broken_group",
+      "length": 64,
+      "model": "window_attention",
+      "readout": "attention",
+      "accuracy_mean": 0.794271,
+      "accuracy_range": [
+        0.769531,
+        0.822266
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "broken_group",
+      "length": 96,
+      "model": "exact_window_64B",
+      "readout": "last_match",
+      "accuracy_mean": 0.734375,
+      "accuracy_range": [
+        0.727539,
+        0.74707
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "broken_group",
+      "length": 96,
+      "model": "fast_weight",
+      "readout": "fast_weight",
+      "accuracy_mean": 0.484375,
+      "accuracy_range": [
+        0.451172,
+        0.505859
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "broken_group",
+      "length": 96,
+      "model": "gru",
+      "readout": "gru",
+      "accuracy_mean": 0.546875,
+      "accuracy_range": [
+        0.521484,
+        0.585938
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "broken_group",
+      "length": 96,
+      "model": "indexed_bit_table_16B",
+      "readout": "exact",
+      "accuracy_mean": 1.0,
+      "accuracy_range": [
+        1.0,
+        1.0
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "broken_group",
+      "length": 96,
+      "model": "phase_fixed_router",
+      "readout": "direct_addressed",
+      "accuracy_mean": 0.838542,
+      "accuracy_range": [
+        0.826172,
+        0.845703
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "broken_group",
+      "length": 96,
+      "model": "phase_fixed_router",
+      "readout": "fixed_route",
+      "accuracy_mean": 0.501953,
+      "accuracy_range": [
+        0.5,
+        0.505859
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "broken_group",
+      "length": 96,
+      "model": "phase_fixed_router",
+      "readout": "learned_order_policy",
+      "accuracy_mean": 0.556641,
+      "accuracy_range": [
+        0.542969,
+        0.570312
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "broken_group",
+      "length": 96,
+      "model": "phase_fixed_router",
+      "readout": "paired",
+      "accuracy_mean": 0.735026,
+      "accuracy_range": [
+        0.701172,
+        0.757812
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "broken_group",
+      "length": 96,
+      "model": "phase_fixed_router",
+      "readout": "ratio",
+      "accuracy_mean": 0.838542,
+      "accuracy_range": [
+        0.826172,
+        0.845703
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "broken_group",
+      "length": 96,
+      "model": "phase_fixed_router",
+      "readout": "single",
+      "accuracy_mean": 0.59375,
+      "accuracy_range": [
+        0.558594,
+        0.626953
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "broken_group",
+      "length": 96,
+      "model": "phase_graph",
+      "readout": "direct_addressed",
+      "accuracy_mean": 0.809245,
+      "accuracy_range": [
+        0.802734,
+        0.814453
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "broken_group",
+      "length": 96,
+      "model": "phase_graph",
+      "readout": "fixed_route",
+      "accuracy_mean": 0.504557,
+      "accuracy_range": [
+        0.492188,
+        0.519531
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "broken_group",
+      "length": 96,
+      "model": "phase_graph",
+      "readout": "learned_order_policy",
+      "accuracy_mean": 0.546875,
+      "accuracy_range": [
+        0.494141,
+        0.609375
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "broken_group",
+      "length": 96,
+      "model": "phase_graph",
+      "readout": "paired",
+      "accuracy_mean": 0.759766,
+      "accuracy_range": [
+        0.671875,
+        0.8125
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "broken_group",
+      "length": 96,
+      "model": "phase_graph",
+      "readout": "ratio",
+      "accuracy_mean": 0.809245,
+      "accuracy_range": [
+        0.802734,
+        0.814453
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "broken_group",
+      "length": 96,
+      "model": "phase_graph",
+      "readout": "single",
+      "accuracy_mean": 0.595052,
+      "accuracy_range": [
+        0.574219,
+        0.609375
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "broken_group",
+      "length": 96,
+      "model": "window_attention",
+      "readout": "attention",
+      "accuracy_mean": 0.708333,
+      "accuracy_range": [
+        0.697266,
+        0.720703
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped",
+      "length": 16,
+      "model": "exact_window_64B",
+      "readout": "last_match",
+      "accuracy_mean": 1.0,
+      "accuracy_range": [
+        1.0,
+        1.0
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped",
+      "length": 16,
+      "model": "fast_weight",
+      "readout": "fast_weight",
+      "accuracy_mean": 0.504557,
+      "accuracy_range": [
+        0.460938,
+        0.5625
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped",
+      "length": 16,
+      "model": "gru",
+      "readout": "gru",
+      "accuracy_mean": 0.619792,
+      "accuracy_range": [
+        0.601562,
+        0.654297
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped",
+      "length": 16,
+      "model": "indexed_bit_table_16B",
+      "readout": "exact",
+      "accuracy_mean": 1.0,
+      "accuracy_range": [
+        1.0,
+        1.0
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped",
+      "length": 16,
+      "model": "phase_fixed_router",
+      "readout": "direct_addressed",
+      "accuracy_mean": 0.957031,
+      "accuracy_range": [
+        0.951172,
+        0.962891
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped",
+      "length": 16,
+      "model": "phase_fixed_router",
+      "readout": "fixed_route",
+      "accuracy_mean": 0.591797,
+      "accuracy_range": [
+        0.554688,
+        0.638672
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped",
+      "length": 16,
+      "model": "phase_fixed_router",
+      "readout": "learned_order_policy",
+      "accuracy_mean": 0.772135,
+      "accuracy_range": [
+        0.736328,
+        0.796875
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped",
+      "length": 16,
+      "model": "phase_fixed_router",
+      "readout": "paired",
+      "accuracy_mean": 0.917318,
+      "accuracy_range": [
+        0.898438,
+        0.933594
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped",
+      "length": 16,
+      "model": "phase_fixed_router",
+      "readout": "ratio",
+      "accuracy_mean": 0.957031,
+      "accuracy_range": [
+        0.951172,
+        0.962891
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped",
+      "length": 16,
+      "model": "phase_fixed_router",
+      "readout": "single",
+      "accuracy_mean": 0.824219,
+      "accuracy_range": [
+        0.78125,
+        0.849609
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped",
+      "length": 16,
+      "model": "phase_graph",
+      "readout": "direct_addressed",
+      "accuracy_mean": 0.930989,
+      "accuracy_range": [
+        0.923828,
+        0.941406
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped",
+      "length": 16,
+      "model": "phase_graph",
+      "readout": "fixed_route",
+      "accuracy_mean": 0.579427,
+      "accuracy_range": [
+        0.556641,
+        0.603516
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped",
+      "length": 16,
+      "model": "phase_graph",
+      "readout": "learned_order_policy",
+      "accuracy_mean": 0.726562,
+      "accuracy_range": [
+        0.652344,
+        0.802734
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped",
+      "length": 16,
+      "model": "phase_graph",
+      "readout": "paired",
+      "accuracy_mean": 0.923177,
+      "accuracy_range": [
+        0.910156,
+        0.939453
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped",
+      "length": 16,
+      "model": "phase_graph",
+      "readout": "ratio",
+      "accuracy_mean": 0.930989,
+      "accuracy_range": [
+        0.923828,
+        0.941406
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped",
+      "length": 16,
+      "model": "phase_graph",
+      "readout": "single",
+      "accuracy_mean": 0.792318,
+      "accuracy_range": [
+        0.755859,
+        0.830078
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped",
+      "length": 16,
+      "model": "window_attention",
+      "readout": "attention",
+      "accuracy_mean": 1.0,
+      "accuracy_range": [
+        1.0,
+        1.0
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped",
+      "length": 32,
+      "model": "exact_window_64B",
+      "readout": "last_match",
+      "accuracy_mean": 1.0,
+      "accuracy_range": [
+        1.0,
+        1.0
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped",
+      "length": 32,
+      "model": "fast_weight",
+      "readout": "fast_weight",
+      "accuracy_mean": 0.526041,
+      "accuracy_range": [
+        0.490234,
+        0.548828
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped",
+      "length": 32,
+      "model": "gru",
+      "readout": "gru",
+      "accuracy_mean": 0.631511,
+      "accuracy_range": [
+        0.617188,
+        0.648438
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped",
+      "length": 32,
+      "model": "indexed_bit_table_16B",
+      "readout": "exact",
+      "accuracy_mean": 1.0,
+      "accuracy_range": [
+        1.0,
+        1.0
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped",
+      "length": 32,
+      "model": "phase_fixed_router",
+      "readout": "direct_addressed",
+      "accuracy_mean": 0.927083,
+      "accuracy_range": [
+        0.917969,
+        0.939453
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped",
+      "length": 32,
+      "model": "phase_fixed_router",
+      "readout": "fixed_route",
+      "accuracy_mean": 0.565104,
+      "accuracy_range": [
+        0.517578,
+        0.595703
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped",
+      "length": 32,
+      "model": "phase_fixed_router",
+      "readout": "learned_order_policy",
+      "accuracy_mean": 0.643229,
+      "accuracy_range": [
+        0.625,
+        0.673828
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped",
+      "length": 32,
+      "model": "phase_fixed_router",
+      "readout": "paired",
+      "accuracy_mean": 0.843099,
+      "accuracy_range": [
+        0.798828,
+        0.876953
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped",
+      "length": 32,
+      "model": "phase_fixed_router",
+      "readout": "ratio",
+      "accuracy_mean": 0.927083,
+      "accuracy_range": [
+        0.917969,
+        0.939453
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped",
+      "length": 32,
+      "model": "phase_fixed_router",
+      "readout": "single",
+      "accuracy_mean": 0.716146,
+      "accuracy_range": [
+        0.699219,
+        0.734375
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped",
+      "length": 32,
+      "model": "phase_graph",
+      "readout": "direct_addressed",
+      "accuracy_mean": 0.898437,
+      "accuracy_range": [
+        0.882812,
+        0.908203
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped",
+      "length": 32,
+      "model": "phase_graph",
+      "readout": "fixed_route",
+      "accuracy_mean": 0.578125,
+      "accuracy_range": [
+        0.537109,
+        0.613281
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped",
+      "length": 32,
+      "model": "phase_graph",
+      "readout": "learned_order_policy",
+      "accuracy_mean": 0.649088,
+      "accuracy_range": [
+        0.623047,
+        0.693359
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped",
+      "length": 32,
+      "model": "phase_graph",
+      "readout": "paired",
+      "accuracy_mean": 0.860026,
+      "accuracy_range": [
+        0.792969,
+        0.902344
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped",
+      "length": 32,
+      "model": "phase_graph",
+      "readout": "ratio",
+      "accuracy_mean": 0.898437,
+      "accuracy_range": [
+        0.882812,
+        0.908203
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped",
+      "length": 32,
+      "model": "phase_graph",
+      "readout": "single",
+      "accuracy_mean": 0.692708,
+      "accuracy_range": [
+        0.666016,
+        0.722656
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped",
+      "length": 32,
+      "model": "window_attention",
+      "readout": "attention",
+      "accuracy_mean": 1.0,
+      "accuracy_range": [
+        1.0,
+        1.0
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped",
+      "length": 64,
+      "model": "exact_window_64B",
+      "readout": "last_match",
+      "accuracy_mean": 0.795573,
+      "accuracy_range": [
+        0.788086,
+        0.801758
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped",
+      "length": 64,
+      "model": "fast_weight",
+      "readout": "fast_weight",
+      "accuracy_mean": 0.498698,
+      "accuracy_range": [
+        0.470703,
+        0.554688
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped",
+      "length": 64,
+      "model": "gru",
+      "readout": "gru",
+      "accuracy_mean": 0.604167,
+      "accuracy_range": [
+        0.568359,
+        0.654297
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped",
+      "length": 64,
+      "model": "indexed_bit_table_16B",
+      "readout": "exact",
+      "accuracy_mean": 1.0,
+      "accuracy_range": [
+        1.0,
+        1.0
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped",
+      "length": 64,
+      "model": "phase_fixed_router",
+      "readout": "direct_addressed",
+      "accuracy_mean": 0.858073,
+      "accuracy_range": [
+        0.833984,
+        0.878906
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped",
+      "length": 64,
+      "model": "phase_fixed_router",
+      "readout": "fixed_route",
+      "accuracy_mean": 0.563151,
+      "accuracy_range": [
+        0.523438,
+        0.585938
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped",
+      "length": 64,
+      "model": "phase_fixed_router",
+      "readout": "learned_order_policy",
+      "accuracy_mean": 0.597005,
+      "accuracy_range": [
+        0.587891,
+        0.609375
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped",
+      "length": 64,
+      "model": "phase_fixed_router",
+      "readout": "paired",
+      "accuracy_mean": 0.766927,
+      "accuracy_range": [
+        0.703125,
+        0.832031
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped",
+      "length": 64,
+      "model": "phase_fixed_router",
+      "readout": "ratio",
+      "accuracy_mean": 0.858073,
+      "accuracy_range": [
+        0.833984,
+        0.878906
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped",
+      "length": 64,
+      "model": "phase_fixed_router",
+      "readout": "single",
+      "accuracy_mean": 0.63737,
+      "accuracy_range": [
+        0.621094,
+        0.65625
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped",
+      "length": 64,
+      "model": "phase_graph",
+      "readout": "direct_addressed",
+      "accuracy_mean": 0.836589,
+      "accuracy_range": [
+        0.826172,
+        0.857422
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped",
+      "length": 64,
+      "model": "phase_graph",
+      "readout": "fixed_route",
+      "accuracy_mean": 0.565104,
+      "accuracy_range": [
+        0.556641,
+        0.580078
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped",
+      "length": 64,
+      "model": "phase_graph",
+      "readout": "learned_order_policy",
+      "accuracy_mean": 0.580078,
+      "accuracy_range": [
+        0.523438,
+        0.638672
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped",
+      "length": 64,
+      "model": "phase_graph",
+      "readout": "paired",
+      "accuracy_mean": 0.788411,
+      "accuracy_range": [
+        0.708984,
+        0.830078
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped",
+      "length": 64,
+      "model": "phase_graph",
+      "readout": "ratio",
+      "accuracy_mean": 0.836589,
+      "accuracy_range": [
+        0.826172,
+        0.857422
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped",
+      "length": 64,
+      "model": "phase_graph",
+      "readout": "single",
+      "accuracy_mean": 0.606771,
+      "accuracy_range": [
+        0.578125,
+        0.630859
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped",
+      "length": 64,
+      "model": "window_attention",
+      "readout": "attention",
+      "accuracy_mean": 0.817708,
+      "accuracy_range": [
+        0.814453,
+        0.824219
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped",
+      "length": 96,
+      "model": "exact_window_64B",
+      "readout": "last_match",
+      "accuracy_mean": 0.741862,
+      "accuracy_range": [
+        0.726562,
+        0.750977
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped",
+      "length": 96,
+      "model": "fast_weight",
+      "readout": "fast_weight",
+      "accuracy_mean": 0.505208,
+      "accuracy_range": [
+        0.490234,
+        0.513672
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped",
+      "length": 96,
+      "model": "gru",
+      "readout": "gru",
+      "accuracy_mean": 0.613281,
+      "accuracy_range": [
+        0.597656,
+        0.632812
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped",
+      "length": 96,
+      "model": "indexed_bit_table_16B",
+      "readout": "exact",
+      "accuracy_mean": 1.0,
+      "accuracy_range": [
+        1.0,
+        1.0
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped",
+      "length": 96,
+      "model": "phase_fixed_router",
+      "readout": "direct_addressed",
+      "accuracy_mean": 0.852213,
+      "accuracy_range": [
+        0.84375,
+        0.861328
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped",
+      "length": 96,
+      "model": "phase_fixed_router",
+      "readout": "fixed_route",
+      "accuracy_mean": 0.552734,
+      "accuracy_range": [
+        0.539062,
+        0.564453
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped",
+      "length": 96,
+      "model": "phase_fixed_router",
+      "readout": "learned_order_policy",
+      "accuracy_mean": 0.557943,
+      "accuracy_range": [
+        0.525391,
+        0.580078
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped",
+      "length": 96,
+      "model": "phase_fixed_router",
+      "readout": "paired",
+      "accuracy_mean": 0.741536,
+      "accuracy_range": [
+        0.6875,
+        0.800781
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped",
+      "length": 96,
+      "model": "phase_fixed_router",
+      "readout": "ratio",
+      "accuracy_mean": 0.852213,
+      "accuracy_range": [
+        0.84375,
+        0.861328
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped",
+      "length": 96,
+      "model": "phase_fixed_router",
+      "readout": "single",
+      "accuracy_mean": 0.606771,
+      "accuracy_range": [
+        0.589844,
+        0.632812
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped",
+      "length": 96,
+      "model": "phase_graph",
+      "readout": "direct_addressed",
+      "accuracy_mean": 0.832031,
+      "accuracy_range": [
+        0.824219,
+        0.845703
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped",
+      "length": 96,
+      "model": "phase_graph",
+      "readout": "fixed_route",
+      "accuracy_mean": 0.563151,
+      "accuracy_range": [
+        0.535156,
+        0.597656
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped",
+      "length": 96,
+      "model": "phase_graph",
+      "readout": "learned_order_policy",
+      "accuracy_mean": 0.572917,
+      "accuracy_range": [
+        0.525391,
+        0.644531
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped",
+      "length": 96,
+      "model": "phase_graph",
+      "readout": "paired",
+      "accuracy_mean": 0.78711,
+      "accuracy_range": [
+        0.710938,
+        0.826172
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped",
+      "length": 96,
+      "model": "phase_graph",
+      "readout": "ratio",
+      "accuracy_mean": 0.832031,
+      "accuracy_range": [
+        0.824219,
+        0.845703
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped",
+      "length": 96,
+      "model": "phase_graph",
+      "readout": "single",
+      "accuracy_mean": 0.608724,
+      "accuracy_range": [
+        0.566406,
+        0.652344
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped",
+      "length": 96,
+      "model": "window_attention",
+      "readout": "attention",
+      "accuracy_mean": 0.766927,
+      "accuracy_range": [
+        0.751953,
+        0.777344
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped16",
+      "length": 16,
+      "model": "exact_window_64B",
+      "readout": "last_match",
+      "accuracy_mean": 1.0,
+      "accuracy_range": [
+        1.0,
+        1.0
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped16",
+      "length": 16,
+      "model": "fast_weight",
+      "readout": "fast_weight",
+      "accuracy_mean": 0.522136,
+      "accuracy_range": [
+        0.464844,
+        0.589844
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped16",
+      "length": 16,
+      "model": "gru",
+      "readout": "gru",
+      "accuracy_mean": 0.671875,
+      "accuracy_range": [
+        0.664062,
+        0.681641
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped16",
+      "length": 16,
+      "model": "indexed_bit_table_16B",
+      "readout": "exact",
+      "accuracy_mean": 1.0,
+      "accuracy_range": [
+        1.0,
+        1.0
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped16",
+      "length": 16,
+      "model": "phase_fixed_router",
+      "readout": "direct_addressed",
+      "accuracy_mean": 0.961589,
+      "accuracy_range": [
+        0.957031,
+        0.964844
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped16",
+      "length": 16,
+      "model": "phase_fixed_router",
+      "readout": "fixed_route",
+      "accuracy_mean": 0.611328,
+      "accuracy_range": [
+        0.580078,
+        0.634766
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped16",
+      "length": 16,
+      "model": "phase_fixed_router",
+      "readout": "learned_order_policy",
+      "accuracy_mean": 0.78125,
+      "accuracy_range": [
+        0.755859,
+        0.798828
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped16",
+      "length": 16,
+      "model": "phase_fixed_router",
+      "readout": "paired",
+      "accuracy_mean": 0.919922,
+      "accuracy_range": [
+        0.902344,
+        0.941406
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped16",
+      "length": 16,
+      "model": "phase_fixed_router",
+      "readout": "ratio",
+      "accuracy_mean": 0.961589,
+      "accuracy_range": [
+        0.957031,
+        0.964844
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped16",
+      "length": 16,
+      "model": "phase_fixed_router",
+      "readout": "single",
+      "accuracy_mean": 0.832682,
+      "accuracy_range": [
+        0.814453,
+        0.845703
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped16",
+      "length": 16,
+      "model": "phase_graph",
+      "readout": "direct_addressed",
+      "accuracy_mean": 0.927734,
+      "accuracy_range": [
+        0.912109,
+        0.949219
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped16",
+      "length": 16,
+      "model": "phase_graph",
+      "readout": "fixed_route",
+      "accuracy_mean": 0.608073,
+      "accuracy_range": [
+        0.582031,
+        0.646484
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped16",
+      "length": 16,
+      "model": "phase_graph",
+      "readout": "learned_order_policy",
+      "accuracy_mean": 0.735026,
+      "accuracy_range": [
+        0.685547,
+        0.822266
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped16",
+      "length": 16,
+      "model": "phase_graph",
+      "readout": "paired",
+      "accuracy_mean": 0.92513,
+      "accuracy_range": [
+        0.910156,
+        0.941406
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped16",
+      "length": 16,
+      "model": "phase_graph",
+      "readout": "ratio",
+      "accuracy_mean": 0.927734,
+      "accuracy_range": [
+        0.912109,
+        0.949219
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped16",
+      "length": 16,
+      "model": "phase_graph",
+      "readout": "single",
+      "accuracy_mean": 0.799479,
+      "accuracy_range": [
+        0.759766,
+        0.845703
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped16",
+      "length": 16,
+      "model": "window_attention",
+      "readout": "attention",
+      "accuracy_mean": 1.0,
+      "accuracy_range": [
+        1.0,
+        1.0
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped16",
+      "length": 32,
+      "model": "exact_window_64B",
+      "readout": "last_match",
+      "accuracy_mean": 1.0,
+      "accuracy_range": [
+        1.0,
+        1.0
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped16",
+      "length": 32,
+      "model": "fast_weight",
+      "readout": "fast_weight",
+      "accuracy_mean": 0.486328,
+      "accuracy_range": [
+        0.451172,
+        0.517578
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped16",
+      "length": 32,
+      "model": "gru",
+      "readout": "gru",
+      "accuracy_mean": 0.642578,
+      "accuracy_range": [
+        0.619141,
+        0.660156
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped16",
+      "length": 32,
+      "model": "indexed_bit_table_16B",
+      "readout": "exact",
+      "accuracy_mean": 1.0,
+      "accuracy_range": [
+        1.0,
+        1.0
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped16",
+      "length": 32,
+      "model": "phase_fixed_router",
+      "readout": "direct_addressed",
+      "accuracy_mean": 0.938802,
+      "accuracy_range": [
+        0.933594,
+        0.945312
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped16",
+      "length": 32,
+      "model": "phase_fixed_router",
+      "readout": "fixed_route",
+      "accuracy_mean": 0.602214,
+      "accuracy_range": [
+        0.597656,
+        0.605469
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped16",
+      "length": 32,
+      "model": "phase_fixed_router",
+      "readout": "learned_order_policy",
+      "accuracy_mean": 0.697266,
+      "accuracy_range": [
+        0.685547,
+        0.720703
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped16",
+      "length": 32,
+      "model": "phase_fixed_router",
+      "readout": "paired",
+      "accuracy_mean": 0.864583,
+      "accuracy_range": [
+        0.849609,
+        0.890625
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped16",
+      "length": 32,
+      "model": "phase_fixed_router",
+      "readout": "ratio",
+      "accuracy_mean": 0.938802,
+      "accuracy_range": [
+        0.933594,
+        0.945312
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped16",
+      "length": 32,
+      "model": "phase_fixed_router",
+      "readout": "single",
+      "accuracy_mean": 0.751302,
+      "accuracy_range": [
+        0.732422,
+        0.767578
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped16",
+      "length": 32,
+      "model": "phase_graph",
+      "readout": "direct_addressed",
+      "accuracy_mean": 0.912109,
+      "accuracy_range": [
+        0.896484,
+        0.919922
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped16",
+      "length": 32,
+      "model": "phase_graph",
+      "readout": "fixed_route",
+      "accuracy_mean": 0.594401,
+      "accuracy_range": [
+        0.566406,
+        0.623047
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped16",
+      "length": 32,
+      "model": "phase_graph",
+      "readout": "learned_order_policy",
+      "accuracy_mean": 0.652344,
+      "accuracy_range": [
+        0.576172,
+        0.755859
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped16",
+      "length": 32,
+      "model": "phase_graph",
+      "readout": "paired",
+      "accuracy_mean": 0.874349,
+      "accuracy_range": [
+        0.835938,
+        0.894531
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped16",
+      "length": 32,
+      "model": "phase_graph",
+      "readout": "ratio",
+      "accuracy_mean": 0.912109,
+      "accuracy_range": [
+        0.896484,
+        0.919922
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped16",
+      "length": 32,
+      "model": "phase_graph",
+      "readout": "single",
+      "accuracy_mean": 0.697917,
+      "accuracy_range": [
+        0.640625,
+        0.769531
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped16",
+      "length": 32,
+      "model": "window_attention",
+      "readout": "attention",
+      "accuracy_mean": 1.0,
+      "accuracy_range": [
+        1.0,
+        1.0
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped16",
+      "length": 64,
+      "model": "exact_window_64B",
+      "readout": "last_match",
+      "accuracy_mean": 0.815104,
+      "accuracy_range": [
+        0.814453,
+        0.81543
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped16",
+      "length": 64,
+      "model": "fast_weight",
+      "readout": "fast_weight",
+      "accuracy_mean": 0.496094,
+      "accuracy_range": [
+        0.46875,
+        0.537109
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped16",
+      "length": 64,
+      "model": "gru",
+      "readout": "gru",
+      "accuracy_mean": 0.649739,
+      "accuracy_range": [
+        0.628906,
+        0.675781
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped16",
+      "length": 64,
+      "model": "indexed_bit_table_16B",
+      "readout": "exact",
+      "accuracy_mean": 1.0,
+      "accuracy_range": [
+        1.0,
+        1.0
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped16",
+      "length": 64,
+      "model": "phase_fixed_router",
+      "readout": "direct_addressed",
+      "accuracy_mean": 0.893229,
+      "accuracy_range": [
+        0.876953,
+        0.90625
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped16",
+      "length": 64,
+      "model": "phase_fixed_router",
+      "readout": "fixed_route",
+      "accuracy_mean": 0.580078,
+      "accuracy_range": [
+        0.552734,
+        0.605469
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped16",
+      "length": 64,
+      "model": "phase_fixed_router",
+      "readout": "learned_order_policy",
+      "accuracy_mean": 0.598958,
+      "accuracy_range": [
+        0.582031,
+        0.621094
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped16",
+      "length": 64,
+      "model": "phase_fixed_router",
+      "readout": "paired",
+      "accuracy_mean": 0.777995,
+      "accuracy_range": [
+        0.744141,
+        0.820312
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped16",
+      "length": 64,
+      "model": "phase_fixed_router",
+      "readout": "ratio",
+      "accuracy_mean": 0.893229,
+      "accuracy_range": [
+        0.876953,
+        0.90625
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped16",
+      "length": 64,
+      "model": "phase_fixed_router",
+      "readout": "single",
+      "accuracy_mean": 0.645833,
+      "accuracy_range": [
+        0.630859,
+        0.669922
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped16",
+      "length": 64,
+      "model": "phase_graph",
+      "readout": "direct_addressed",
+      "accuracy_mean": 0.85612,
+      "accuracy_range": [
+        0.824219,
+        0.880859
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped16",
+      "length": 64,
+      "model": "phase_graph",
+      "readout": "fixed_route",
+      "accuracy_mean": 0.608724,
+      "accuracy_range": [
+        0.59375,
+        0.636719
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped16",
+      "length": 64,
+      "model": "phase_graph",
+      "readout": "learned_order_policy",
+      "accuracy_mean": 0.630859,
+      "accuracy_range": [
+        0.582031,
+        0.703125
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped16",
+      "length": 64,
+      "model": "phase_graph",
+      "readout": "paired",
+      "accuracy_mean": 0.805338,
+      "accuracy_range": [
+        0.740234,
+        0.841797
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped16",
+      "length": 64,
+      "model": "phase_graph",
+      "readout": "ratio",
+      "accuracy_mean": 0.85612,
+      "accuracy_range": [
+        0.824219,
+        0.880859
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped16",
+      "length": 64,
+      "model": "phase_graph",
+      "readout": "single",
+      "accuracy_mean": 0.658203,
+      "accuracy_range": [
+        0.625,
+        0.685547
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped16",
+      "length": 64,
+      "model": "window_attention",
+      "readout": "attention",
+      "accuracy_mean": 0.841797,
+      "accuracy_range": [
+        0.837891,
+        0.849609
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped16",
+      "length": 96,
+      "model": "exact_window_64B",
+      "readout": "last_match",
+      "accuracy_mean": 0.737305,
+      "accuracy_range": [
+        0.728516,
+        0.742188
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped16",
+      "length": 96,
+      "model": "fast_weight",
+      "readout": "fast_weight",
+      "accuracy_mean": 0.52474,
+      "accuracy_range": [
+        0.509766,
+        0.533203
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped16",
+      "length": 96,
+      "model": "gru",
+      "readout": "gru",
+      "accuracy_mean": 0.638672,
+      "accuracy_range": [
+        0.625,
+        0.650391
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped16",
+      "length": 96,
+      "model": "indexed_bit_table_16B",
+      "readout": "exact",
+      "accuracy_mean": 1.0,
+      "accuracy_range": [
+        1.0,
+        1.0
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped16",
+      "length": 96,
+      "model": "phase_fixed_router",
+      "readout": "direct_addressed",
+      "accuracy_mean": 0.859375,
+      "accuracy_range": [
+        0.832031,
+        0.880859
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped16",
+      "length": 96,
+      "model": "phase_fixed_router",
+      "readout": "fixed_route",
+      "accuracy_mean": 0.592448,
+      "accuracy_range": [
+        0.576172,
+        0.613281
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped16",
+      "length": 96,
+      "model": "phase_fixed_router",
+      "readout": "learned_order_policy",
+      "accuracy_mean": 0.589193,
+      "accuracy_range": [
+        0.560547,
+        0.621094
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped16",
+      "length": 96,
+      "model": "phase_fixed_router",
+      "readout": "paired",
+      "accuracy_mean": 0.732422,
+      "accuracy_range": [
+        0.667969,
+        0.773438
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped16",
+      "length": 96,
+      "model": "phase_fixed_router",
+      "readout": "ratio",
+      "accuracy_mean": 0.859375,
+      "accuracy_range": [
+        0.832031,
+        0.880859
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped16",
+      "length": 96,
+      "model": "phase_fixed_router",
+      "readout": "single",
+      "accuracy_mean": 0.625,
+      "accuracy_range": [
+        0.609375,
+        0.650391
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped16",
+      "length": 96,
+      "model": "phase_graph",
+      "readout": "direct_addressed",
+      "accuracy_mean": 0.837891,
+      "accuracy_range": [
+        0.822266,
+        0.849609
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped16",
+      "length": 96,
+      "model": "phase_graph",
+      "readout": "fixed_route",
+      "accuracy_mean": 0.606771,
+      "accuracy_range": [
+        0.591797,
+        0.623047
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped16",
+      "length": 96,
+      "model": "phase_graph",
+      "readout": "learned_order_policy",
+      "accuracy_mean": 0.601563,
+      "accuracy_range": [
+        0.53125,
+        0.669922
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped16",
+      "length": 96,
+      "model": "phase_graph",
+      "readout": "paired",
+      "accuracy_mean": 0.784505,
+      "accuracy_range": [
+        0.720703,
+        0.845703
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped16",
+      "length": 96,
+      "model": "phase_graph",
+      "readout": "ratio",
+      "accuracy_mean": 0.837891,
+      "accuracy_range": [
+        0.822266,
+        0.849609
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped16",
+      "length": 96,
+      "model": "phase_graph",
+      "readout": "single",
+      "accuracy_mean": 0.63737,
+      "accuracy_range": [
+        0.609375,
+        0.667969
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "grouped16",
+      "length": 96,
+      "model": "window_attention",
+      "readout": "attention",
+      "accuracy_mean": 0.804687,
+      "accuracy_range": [
+        0.789062,
+        0.833984
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "independent",
+      "length": 16,
+      "model": "exact_window_64B",
+      "readout": "last_match",
+      "accuracy_mean": 1.0,
+      "accuracy_range": [
+        1.0,
+        1.0
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "independent",
+      "length": 16,
+      "model": "fast_weight",
+      "readout": "fast_weight",
+      "accuracy_mean": 0.506511,
+      "accuracy_range": [
+        0.478516,
+        0.542969
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "independent",
+      "length": 16,
+      "model": "gru",
+      "readout": "gru",
+      "accuracy_mean": 0.609375,
+      "accuracy_range": [
+        0.582031,
+        0.625
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "independent",
+      "length": 16,
+      "model": "indexed_bit_table_16B",
+      "readout": "exact",
+      "accuracy_mean": 1.0,
+      "accuracy_range": [
+        1.0,
+        1.0
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "independent",
+      "length": 16,
+      "model": "phase_fixed_router",
+      "readout": "direct_addressed",
+      "accuracy_mean": 0.958333,
+      "accuracy_range": [
+        0.953125,
+        0.964844
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "independent",
+      "length": 16,
+      "model": "phase_fixed_router",
+      "readout": "fixed_route",
+      "accuracy_mean": 0.546875,
+      "accuracy_range": [
+        0.523438,
+        0.560547
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "independent",
+      "length": 16,
+      "model": "phase_fixed_router",
+      "readout": "learned_order_policy",
+      "accuracy_mean": 0.752604,
+      "accuracy_range": [
+        0.734375,
+        0.761719
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "independent",
+      "length": 16,
+      "model": "phase_fixed_router",
+      "readout": "paired",
+      "accuracy_mean": 0.91862,
+      "accuracy_range": [
+        0.902344,
+        0.943359
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "independent",
+      "length": 16,
+      "model": "phase_fixed_router",
+      "readout": "ratio",
+      "accuracy_mean": 0.958333,
+      "accuracy_range": [
+        0.953125,
+        0.964844
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "independent",
+      "length": 16,
+      "model": "phase_fixed_router",
+      "readout": "single",
+      "accuracy_mean": 0.815755,
+      "accuracy_range": [
+        0.802734,
+        0.832031
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "independent",
+      "length": 16,
+      "model": "phase_graph",
+      "readout": "direct_addressed",
+      "accuracy_mean": 0.910156,
+      "accuracy_range": [
+        0.900391,
+        0.923828
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "independent",
+      "length": 16,
+      "model": "phase_graph",
+      "readout": "fixed_route",
+      "accuracy_mean": 0.534505,
+      "accuracy_range": [
+        0.488281,
+        0.589844
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "independent",
+      "length": 16,
+      "model": "phase_graph",
+      "readout": "learned_order_policy",
+      "accuracy_mean": 0.714844,
+      "accuracy_range": [
+        0.662109,
+        0.794922
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "independent",
+      "length": 16,
+      "model": "phase_graph",
+      "readout": "paired",
+      "accuracy_mean": 0.902995,
+      "accuracy_range": [
+        0.888672,
+        0.912109
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "independent",
+      "length": 16,
+      "model": "phase_graph",
+      "readout": "ratio",
+      "accuracy_mean": 0.910156,
+      "accuracy_range": [
+        0.900391,
+        0.923828
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "independent",
+      "length": 16,
+      "model": "phase_graph",
+      "readout": "single",
+      "accuracy_mean": 0.771484,
+      "accuracy_range": [
+        0.720703,
+        0.837891
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "independent",
+      "length": 16,
+      "model": "window_attention",
+      "readout": "attention",
+      "accuracy_mean": 0.97526,
+      "accuracy_range": [
+        0.96875,
+        0.982422
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "independent",
+      "length": 32,
+      "model": "exact_window_64B",
+      "readout": "last_match",
+      "accuracy_mean": 1.0,
+      "accuracy_range": [
+        1.0,
+        1.0
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "independent",
+      "length": 32,
+      "model": "fast_weight",
+      "readout": "fast_weight",
+      "accuracy_mean": 0.504557,
+      "accuracy_range": [
+        0.488281,
+        0.521484
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "independent",
+      "length": 32,
+      "model": "gru",
+      "readout": "gru",
+      "accuracy_mean": 0.546224,
+      "accuracy_range": [
+        0.515625,
+        0.580078
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "independent",
+      "length": 32,
+      "model": "indexed_bit_table_16B",
+      "readout": "exact",
+      "accuracy_mean": 1.0,
+      "accuracy_range": [
+        1.0,
+        1.0
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "independent",
+      "length": 32,
+      "model": "phase_fixed_router",
+      "readout": "direct_addressed",
+      "accuracy_mean": 0.91862,
+      "accuracy_range": [
+        0.908203,
+        0.935547
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "independent",
+      "length": 32,
+      "model": "phase_fixed_router",
+      "readout": "fixed_route",
+      "accuracy_mean": 0.496094,
+      "accuracy_range": [
+        0.482422,
+        0.503906
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "independent",
+      "length": 32,
+      "model": "phase_fixed_router",
+      "readout": "learned_order_policy",
+      "accuracy_mean": 0.656901,
+      "accuracy_range": [
+        0.621094,
+        0.677734
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "independent",
+      "length": 32,
+      "model": "phase_fixed_router",
+      "readout": "paired",
+      "accuracy_mean": 0.845052,
+      "accuracy_range": [
+        0.828125,
+        0.867188
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "independent",
+      "length": 32,
+      "model": "phase_fixed_router",
+      "readout": "ratio",
+      "accuracy_mean": 0.91862,
+      "accuracy_range": [
+        0.908203,
+        0.935547
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "independent",
+      "length": 32,
+      "model": "phase_fixed_router",
+      "readout": "single",
+      "accuracy_mean": 0.722005,
+      "accuracy_range": [
+        0.705078,
+        0.740234
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "independent",
+      "length": 32,
+      "model": "phase_graph",
+      "readout": "direct_addressed",
+      "accuracy_mean": 0.891927,
+      "accuracy_range": [
+        0.873047,
+        0.914062
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "independent",
+      "length": 32,
+      "model": "phase_graph",
+      "readout": "fixed_route",
+      "accuracy_mean": 0.529297,
+      "accuracy_range": [
+        0.507812,
+        0.570312
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "independent",
+      "length": 32,
+      "model": "phase_graph",
+      "readout": "learned_order_policy",
+      "accuracy_mean": 0.627604,
+      "accuracy_range": [
+        0.583984,
+        0.699219
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "independent",
+      "length": 32,
+      "model": "phase_graph",
+      "readout": "paired",
+      "accuracy_mean": 0.871745,
+      "accuracy_range": [
+        0.847656,
+        0.892578
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "independent",
+      "length": 32,
+      "model": "phase_graph",
+      "readout": "ratio",
+      "accuracy_mean": 0.891927,
+      "accuracy_range": [
+        0.873047,
+        0.914062
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "independent",
+      "length": 32,
+      "model": "phase_graph",
+      "readout": "single",
+      "accuracy_mean": 0.689453,
+      "accuracy_range": [
+        0.654297,
+        0.751953
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "independent",
+      "length": 32,
+      "model": "window_attention",
+      "readout": "attention",
+      "accuracy_mean": 0.960286,
+      "accuracy_range": [
+        0.949219,
+        0.976562
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "independent",
+      "length": 64,
+      "model": "exact_window_64B",
+      "readout": "last_match",
+      "accuracy_mean": 0.805339,
+      "accuracy_range": [
+        0.804688,
+        0.805664
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "independent",
+      "length": 64,
+      "model": "fast_weight",
+      "readout": "fast_weight",
+      "accuracy_mean": 0.5,
+      "accuracy_range": [
+        0.472656,
+        0.529297
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "independent",
+      "length": 64,
+      "model": "gru",
+      "readout": "gru",
+      "accuracy_mean": 0.553385,
+      "accuracy_range": [
+        0.541016,
+        0.570312
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "independent",
+      "length": 64,
+      "model": "indexed_bit_table_16B",
+      "readout": "exact",
+      "accuracy_mean": 1.0,
+      "accuracy_range": [
+        1.0,
+        1.0
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "independent",
+      "length": 64,
+      "model": "phase_fixed_router",
+      "readout": "direct_addressed",
+      "accuracy_mean": 0.86263,
+      "accuracy_range": [
+        0.849609,
+        0.873047
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "independent",
+      "length": 64,
+      "model": "phase_fixed_router",
+      "readout": "fixed_route",
+      "accuracy_mean": 0.518881,
+      "accuracy_range": [
+        0.509766,
+        0.523438
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "independent",
+      "length": 64,
+      "model": "phase_fixed_router",
+      "readout": "learned_order_policy",
+      "accuracy_mean": 0.582031,
+      "accuracy_range": [
+        0.546875,
+        0.630859
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "independent",
+      "length": 64,
+      "model": "phase_fixed_router",
+      "readout": "paired",
+      "accuracy_mean": 0.769532,
+      "accuracy_range": [
+        0.730469,
+        0.804688
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "independent",
+      "length": 64,
+      "model": "phase_fixed_router",
+      "readout": "ratio",
+      "accuracy_mean": 0.86263,
+      "accuracy_range": [
+        0.849609,
+        0.873047
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "independent",
+      "length": 64,
+      "model": "phase_fixed_router",
+      "readout": "single",
+      "accuracy_mean": 0.641276,
+      "accuracy_range": [
+        0.597656,
+        0.673828
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "independent",
+      "length": 64,
+      "model": "phase_graph",
+      "readout": "direct_addressed",
+      "accuracy_mean": 0.823568,
+      "accuracy_range": [
+        0.806641,
+        0.839844
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "independent",
+      "length": 64,
+      "model": "phase_graph",
+      "readout": "fixed_route",
+      "accuracy_mean": 0.521484,
+      "accuracy_range": [
+        0.515625,
+        0.527344
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "independent",
+      "length": 64,
+      "model": "phase_graph",
+      "readout": "learned_order_policy",
+      "accuracy_mean": 0.552735,
+      "accuracy_range": [
+        0.509766,
+        0.621094
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "independent",
+      "length": 64,
+      "model": "phase_graph",
+      "readout": "paired",
+      "accuracy_mean": 0.795573,
+      "accuracy_range": [
+        0.744141,
+        0.824219
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "independent",
+      "length": 64,
+      "model": "phase_graph",
+      "readout": "ratio",
+      "accuracy_mean": 0.823568,
+      "accuracy_range": [
+        0.806641,
+        0.839844
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "independent",
+      "length": 64,
+      "model": "phase_graph",
+      "readout": "single",
+      "accuracy_mean": 0.618489,
+      "accuracy_range": [
+        0.583984,
+        0.664062
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "independent",
+      "length": 64,
+      "model": "window_attention",
+      "readout": "attention",
+      "accuracy_mean": 0.777344,
+      "accuracy_range": [
+        0.773438,
+        0.783203
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "independent",
+      "length": 96,
+      "model": "exact_window_64B",
+      "readout": "last_match",
+      "accuracy_mean": 0.743164,
+      "accuracy_range": [
+        0.739258,
+        0.748047
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "independent",
+      "length": 96,
+      "model": "fast_weight",
+      "readout": "fast_weight",
+      "accuracy_mean": 0.498698,
+      "accuracy_range": [
+        0.486328,
+        0.513672
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "independent",
+      "length": 96,
+      "model": "gru",
+      "readout": "gru",
+      "accuracy_mean": 0.514323,
+      "accuracy_range": [
+        0.494141,
+        0.550781
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "independent",
+      "length": 96,
+      "model": "indexed_bit_table_16B",
+      "readout": "exact",
+      "accuracy_mean": 1.0,
+      "accuracy_range": [
+        1.0,
+        1.0
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "independent",
+      "length": 96,
+      "model": "phase_fixed_router",
+      "readout": "direct_addressed",
+      "accuracy_mean": 0.823568,
+      "accuracy_range": [
+        0.804688,
+        0.841797
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "independent",
+      "length": 96,
+      "model": "phase_fixed_router",
+      "readout": "fixed_route",
+      "accuracy_mean": 0.500651,
+      "accuracy_range": [
+        0.462891,
+        0.53125
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "independent",
+      "length": 96,
+      "model": "phase_fixed_router",
+      "readout": "learned_order_policy",
+      "accuracy_mean": 0.531901,
+      "accuracy_range": [
+        0.519531,
+        0.548828
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "independent",
+      "length": 96,
+      "model": "phase_fixed_router",
+      "readout": "paired",
+      "accuracy_mean": 0.701823,
+      "accuracy_range": [
+        0.660156,
+        0.742188
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "independent",
+      "length": 96,
+      "model": "phase_fixed_router",
+      "readout": "ratio",
+      "accuracy_mean": 0.823568,
+      "accuracy_range": [
+        0.804688,
+        0.841797
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "independent",
+      "length": 96,
+      "model": "phase_fixed_router",
+      "readout": "single",
+      "accuracy_mean": 0.578125,
+      "accuracy_range": [
+        0.566406,
+        0.591797
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "independent",
+      "length": 96,
+      "model": "phase_graph",
+      "readout": "direct_addressed",
+      "accuracy_mean": 0.804687,
+      "accuracy_range": [
+        0.796875,
+        0.820312
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "independent",
+      "length": 96,
+      "model": "phase_graph",
+      "readout": "fixed_route",
+      "accuracy_mean": 0.527995,
+      "accuracy_range": [
+        0.505859,
+        0.552734
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "independent",
+      "length": 96,
+      "model": "phase_graph",
+      "readout": "learned_order_policy",
+      "accuracy_mean": 0.547526,
+      "accuracy_range": [
+        0.496094,
+        0.630859
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "independent",
+      "length": 96,
+      "model": "phase_graph",
+      "readout": "paired",
+      "accuracy_mean": 0.764323,
+      "accuracy_range": [
+        0.695312,
+        0.822266
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "independent",
+      "length": 96,
+      "model": "phase_graph",
+      "readout": "ratio",
+      "accuracy_mean": 0.804687,
+      "accuracy_range": [
+        0.796875,
+        0.820312
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "independent",
+      "length": 96,
+      "model": "phase_graph",
+      "readout": "single",
+      "accuracy_mean": 0.587891,
+      "accuracy_range": [
+        0.554688,
+        0.640625
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "independent",
+      "length": 96,
+      "model": "window_attention",
+      "readout": "attention",
+      "accuracy_mean": 0.725911,
+      "accuracy_range": [
+        0.701172,
+        0.753906
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "rewrite",
+      "length": 16,
+      "model": "exact_window_64B",
+      "readout": "last_match",
+      "accuracy_mean": 1.0,
+      "accuracy_range": [
+        1.0,
+        1.0
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "rewrite",
+      "length": 16,
+      "model": "fast_weight",
+      "readout": "fast_weight",
+      "accuracy_mean": 0.520182,
+      "accuracy_range": [
+        0.470703,
+        0.554688
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "rewrite",
+      "length": 16,
+      "model": "gru",
+      "readout": "gru",
+      "accuracy_mean": 0.479818,
+      "accuracy_range": [
+        0.466797,
+        0.503906
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "rewrite",
+      "length": 16,
+      "model": "indexed_bit_table_16B",
+      "readout": "exact",
+      "accuracy_mean": 1.0,
+      "accuracy_range": [
+        1.0,
+        1.0
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "rewrite",
+      "length": 16,
+      "model": "phase_fixed_router",
+      "readout": "direct_addressed",
+      "accuracy_mean": 1.0,
+      "accuracy_range": [
+        1.0,
+        1.0
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "rewrite",
+      "length": 16,
+      "model": "phase_fixed_router",
+      "readout": "fixed_route",
+      "accuracy_mean": 0.545573,
+      "accuracy_range": [
+        0.535156,
+        0.5625
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "rewrite",
+      "length": 16,
+      "model": "phase_fixed_router",
+      "readout": "learned_order_policy",
+      "accuracy_mean": 0.816406,
+      "accuracy_range": [
+        0.8125,
+        0.818359
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "rewrite",
+      "length": 16,
+      "model": "phase_fixed_router",
+      "readout": "paired",
+      "accuracy_mean": 0.966797,
+      "accuracy_range": [
+        0.951172,
+        0.986328
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "rewrite",
+      "length": 16,
+      "model": "phase_fixed_router",
+      "readout": "ratio",
+      "accuracy_mean": 1.0,
+      "accuracy_range": [
+        1.0,
+        1.0
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "rewrite",
+      "length": 16,
+      "model": "phase_fixed_router",
+      "readout": "single",
+      "accuracy_mean": 0.876302,
+      "accuracy_range": [
+        0.871094,
+        0.882812
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "rewrite",
+      "length": 16,
+      "model": "phase_graph",
+      "readout": "direct_addressed",
+      "accuracy_mean": 0.966797,
+      "accuracy_range": [
+        0.949219,
+        0.978516
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "rewrite",
+      "length": 16,
+      "model": "phase_graph",
+      "readout": "fixed_route",
+      "accuracy_mean": 0.533203,
+      "accuracy_range": [
+        0.496094,
+        0.582031
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "rewrite",
+      "length": 16,
+      "model": "phase_graph",
+      "readout": "learned_order_policy",
+      "accuracy_mean": 0.768229,
+      "accuracy_range": [
+        0.695312,
+        0.861328
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "rewrite",
+      "length": 16,
+      "model": "phase_graph",
+      "readout": "paired",
+      "accuracy_mean": 0.955729,
+      "accuracy_range": [
+        0.947266,
+        0.966797
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "rewrite",
+      "length": 16,
+      "model": "phase_graph",
+      "readout": "ratio",
+      "accuracy_mean": 0.966797,
+      "accuracy_range": [
+        0.949219,
+        0.978516
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "rewrite",
+      "length": 16,
+      "model": "phase_graph",
+      "readout": "single",
+      "accuracy_mean": 0.822265,
+      "accuracy_range": [
+        0.757812,
+        0.894531
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "rewrite",
+      "length": 16,
+      "model": "window_attention",
+      "readout": "attention",
+      "accuracy_mean": 0.773437,
+      "accuracy_range": [
+        0.732422,
+        0.820312
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "rewrite",
+      "length": 32,
+      "model": "exact_window_64B",
+      "readout": "last_match",
+      "accuracy_mean": 1.0,
+      "accuracy_range": [
+        1.0,
+        1.0
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "rewrite",
+      "length": 32,
+      "model": "fast_weight",
+      "readout": "fast_weight",
+      "accuracy_mean": 0.528646,
+      "accuracy_range": [
+        0.492188,
+        0.546875
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "rewrite",
+      "length": 32,
+      "model": "gru",
+      "readout": "gru",
+      "accuracy_mean": 0.518229,
+      "accuracy_range": [
+        0.513672,
+        0.523438
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "rewrite",
+      "length": 32,
+      "model": "indexed_bit_table_16B",
+      "readout": "exact",
+      "accuracy_mean": 1.0,
+      "accuracy_range": [
+        1.0,
+        1.0
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "rewrite",
+      "length": 32,
+      "model": "phase_fixed_router",
+      "readout": "direct_addressed",
+      "accuracy_mean": 1.0,
+      "accuracy_range": [
+        1.0,
+        1.0
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "rewrite",
+      "length": 32,
+      "model": "phase_fixed_router",
+      "readout": "fixed_route",
+      "accuracy_mean": 0.533203,
+      "accuracy_range": [
+        0.521484,
+        0.554688
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "rewrite",
+      "length": 32,
+      "model": "phase_fixed_router",
+      "readout": "learned_order_policy",
+      "accuracy_mean": 0.708984,
+      "accuracy_range": [
+        0.685547,
+        0.722656
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "rewrite",
+      "length": 32,
+      "model": "phase_fixed_router",
+      "readout": "paired",
+      "accuracy_mean": 0.913412,
+      "accuracy_range": [
+        0.869141,
+        0.962891
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "rewrite",
+      "length": 32,
+      "model": "phase_fixed_router",
+      "readout": "ratio",
+      "accuracy_mean": 1.0,
+      "accuracy_range": [
+        1.0,
+        1.0
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "rewrite",
+      "length": 32,
+      "model": "phase_fixed_router",
+      "readout": "single",
+      "accuracy_mean": 0.794271,
+      "accuracy_range": [
+        0.785156,
+        0.798828
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "rewrite",
+      "length": 32,
+      "model": "phase_graph",
+      "readout": "direct_addressed",
+      "accuracy_mean": 0.962891,
+      "accuracy_range": [
+        0.935547,
+        0.986328
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "rewrite",
+      "length": 32,
+      "model": "phase_graph",
+      "readout": "fixed_route",
+      "accuracy_mean": 0.527995,
+      "accuracy_range": [
+        0.494141,
+        0.554688
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "rewrite",
+      "length": 32,
+      "model": "phase_graph",
+      "readout": "learned_order_policy",
+      "accuracy_mean": 0.667317,
+      "accuracy_range": [
+        0.601562,
+        0.755859
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "rewrite",
+      "length": 32,
+      "model": "phase_graph",
+      "readout": "paired",
+      "accuracy_mean": 0.934896,
+      "accuracy_range": [
+        0.902344,
+        0.958984
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "rewrite",
+      "length": 32,
+      "model": "phase_graph",
+      "readout": "ratio",
+      "accuracy_mean": 0.962891,
+      "accuracy_range": [
+        0.935547,
+        0.986328
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "rewrite",
+      "length": 32,
+      "model": "phase_graph",
+      "readout": "single",
+      "accuracy_mean": 0.740885,
+      "accuracy_range": [
+        0.695312,
+        0.824219
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "rewrite",
+      "length": 32,
+      "model": "window_attention",
+      "readout": "attention",
+      "accuracy_mean": 0.701172,
+      "accuracy_range": [
+        0.65625,
+        0.728516
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "rewrite",
+      "length": 64,
+      "model": "exact_window_64B",
+      "readout": "last_match",
+      "accuracy_mean": 1.0,
+      "accuracy_range": [
+        1.0,
+        1.0
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "rewrite",
+      "length": 64,
+      "model": "fast_weight",
+      "readout": "fast_weight",
+      "accuracy_mean": 0.542969,
+      "accuracy_range": [
+        0.494141,
+        0.576172
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "rewrite",
+      "length": 64,
+      "model": "gru",
+      "readout": "gru",
+      "accuracy_mean": 0.528646,
+      "accuracy_range": [
+        0.519531,
+        0.541016
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "rewrite",
+      "length": 64,
+      "model": "indexed_bit_table_16B",
+      "readout": "exact",
+      "accuracy_mean": 1.0,
+      "accuracy_range": [
+        1.0,
+        1.0
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "rewrite",
+      "length": 64,
+      "model": "phase_fixed_router",
+      "readout": "direct_addressed",
+      "accuracy_mean": 1.0,
+      "accuracy_range": [
+        1.0,
+        1.0
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "rewrite",
+      "length": 64,
+      "model": "phase_fixed_router",
+      "readout": "fixed_route",
+      "accuracy_mean": 0.529297,
+      "accuracy_range": [
+        0.513672,
+        0.544922
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "rewrite",
+      "length": 64,
+      "model": "phase_fixed_router",
+      "readout": "learned_order_policy",
+      "accuracy_mean": 0.611328,
+      "accuracy_range": [
+        0.576172,
+        0.648438
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "rewrite",
+      "length": 64,
+      "model": "phase_fixed_router",
+      "readout": "paired",
+      "accuracy_mean": 0.856771,
+      "accuracy_range": [
+        0.808594,
+        0.898438
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "rewrite",
+      "length": 64,
+      "model": "phase_fixed_router",
+      "readout": "ratio",
+      "accuracy_mean": 1.0,
+      "accuracy_range": [
+        1.0,
+        1.0
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "rewrite",
+      "length": 64,
+      "model": "phase_fixed_router",
+      "readout": "single",
+      "accuracy_mean": 0.697266,
+      "accuracy_range": [
+        0.662109,
+        0.730469
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "rewrite",
+      "length": 64,
+      "model": "phase_graph",
+      "readout": "direct_addressed",
+      "accuracy_mean": 0.955078,
+      "accuracy_range": [
+        0.925781,
+        0.984375
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "rewrite",
+      "length": 64,
+      "model": "phase_graph",
+      "readout": "fixed_route",
+      "accuracy_mean": 0.514323,
+      "accuracy_range": [
+        0.501953,
+        0.53125
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "rewrite",
+      "length": 64,
+      "model": "phase_graph",
+      "readout": "learned_order_policy",
+      "accuracy_mean": 0.611979,
+      "accuracy_range": [
+        0.560547,
+        0.683594
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "rewrite",
+      "length": 64,
+      "model": "phase_graph",
+      "readout": "paired",
+      "accuracy_mean": 0.906901,
+      "accuracy_range": [
+        0.828125,
+        0.957031
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "rewrite",
+      "length": 64,
+      "model": "phase_graph",
+      "readout": "ratio",
+      "accuracy_mean": 0.955078,
+      "accuracy_range": [
+        0.925781,
+        0.984375
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "rewrite",
+      "length": 64,
+      "model": "phase_graph",
+      "readout": "single",
+      "accuracy_mean": 0.690104,
+      "accuracy_range": [
+        0.667969,
+        0.734375
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "rewrite",
+      "length": 64,
+      "model": "window_attention",
+      "readout": "attention",
+      "accuracy_mean": 0.809245,
+      "accuracy_range": [
+        0.771484,
+        0.849609
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "rewrite",
+      "length": 96,
+      "model": "exact_window_64B",
+      "readout": "last_match",
+      "accuracy_mean": 1.0,
+      "accuracy_range": [
+        1.0,
+        1.0
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "rewrite",
+      "length": 96,
+      "model": "fast_weight",
+      "readout": "fast_weight",
+      "accuracy_mean": 0.524089,
+      "accuracy_range": [
+        0.486328,
+        0.574219
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "rewrite",
+      "length": 96,
+      "model": "gru",
+      "readout": "gru",
+      "accuracy_mean": 0.49349,
+      "accuracy_range": [
+        0.466797,
+        0.53125
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "rewrite",
+      "length": 96,
+      "model": "indexed_bit_table_16B",
+      "readout": "exact",
+      "accuracy_mean": 1.0,
+      "accuracy_range": [
+        1.0,
+        1.0
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "rewrite",
+      "length": 96,
+      "model": "phase_fixed_router",
+      "readout": "direct_addressed",
+      "accuracy_mean": 1.0,
+      "accuracy_range": [
+        1.0,
+        1.0
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "rewrite",
+      "length": 96,
+      "model": "phase_fixed_router",
+      "readout": "fixed_route",
+      "accuracy_mean": 0.534505,
+      "accuracy_range": [
+        0.53125,
+        0.539062
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "rewrite",
+      "length": 96,
+      "model": "phase_fixed_router",
+      "readout": "learned_order_policy",
+      "accuracy_mean": 0.574219,
+      "accuracy_range": [
+        0.529297,
+        0.623047
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "rewrite",
+      "length": 96,
+      "model": "phase_fixed_router",
+      "readout": "paired",
+      "accuracy_mean": 0.825521,
+      "accuracy_range": [
+        0.71875,
+        0.908203
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "rewrite",
+      "length": 96,
+      "model": "phase_fixed_router",
+      "readout": "ratio",
+      "accuracy_mean": 1.0,
+      "accuracy_range": [
+        1.0,
+        1.0
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "rewrite",
+      "length": 96,
+      "model": "phase_fixed_router",
+      "readout": "single",
+      "accuracy_mean": 0.632162,
+      "accuracy_range": [
+        0.609375,
+        0.666016
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "rewrite",
+      "length": 96,
+      "model": "phase_graph",
+      "readout": "direct_addressed",
+      "accuracy_mean": 0.96875,
+      "accuracy_range": [
+        0.951172,
+        0.980469
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "rewrite",
+      "length": 96,
+      "model": "phase_graph",
+      "readout": "fixed_route",
+      "accuracy_mean": 0.544922,
+      "accuracy_range": [
+        0.519531,
+        0.574219
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "rewrite",
+      "length": 96,
+      "model": "phase_graph",
+      "readout": "learned_order_policy",
+      "accuracy_mean": 0.593099,
+      "accuracy_range": [
+        0.546875,
+        0.667969
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "rewrite",
+      "length": 96,
+      "model": "phase_graph",
+      "readout": "paired",
+      "accuracy_mean": 0.898437,
+      "accuracy_range": [
+        0.806641,
+        0.945312
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "rewrite",
+      "length": 96,
+      "model": "phase_graph",
+      "readout": "ratio",
+      "accuracy_mean": 0.96875,
+      "accuracy_range": [
+        0.951172,
+        0.980469
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "rewrite",
+      "length": 96,
+      "model": "phase_graph",
+      "readout": "single",
+      "accuracy_mean": 0.628906,
+      "accuracy_range": [
+        0.601562,
+        0.677734
+      ],
+      "seed_count": 3
+    },
+    {
+      "scenario": "rewrite",
+      "length": 96,
+      "model": "window_attention",
+      "readout": "attention",
+      "accuracy_mean": 0.884115,
+      "accuracy_range": [
+        0.869141,
+        0.900391
+      ],
+      "seed_count": 3
+    }
+  ],
+  "diagnostics_by_seed": [
+    {
+      "seed": 41,
+      "writer_route_entropy_nats": 4.12919282913208,
+      "distinct_writer_top_sites": 56,
+      "mean_writer_site_probability": 0.027231603860855103,
+      "read_write_top_site_agreement": 0.9296875,
+      "mean_order_ab_probability": 0.6025132536888123,
+      "mean_order_confidence": 0.6029453277587891,
+      "writer_top_sites_changed_during_training": 31,
+      "key_count": 128,
+      "ratio_minus_direct_max_complex_abs": 4.805480102731963e-07
+    },
+    {
+      "seed": 97,
+      "writer_route_entropy_nats": 4.125953197479248,
+      "distinct_writer_top_sites": 55,
+      "mean_writer_site_probability": 0.030733933672308922,
+      "read_write_top_site_agreement": 0.953125,
+      "mean_order_ab_probability": 0.578008770942688,
+      "mean_order_confidence": 0.5802090167999268,
+      "writer_top_sites_changed_during_training": 15,
+      "key_count": 128,
+      "ratio_minus_direct_max_complex_abs": 1.087682676370605e-06
+    },
+    {
+      "seed": 127,
+      "writer_route_entropy_nats": 4.128005504608154,
+      "distinct_writer_top_sites": 61,
+      "mean_writer_site_probability": 0.02891424484550953,
+      "read_write_top_site_agreement": 0.875,
+      "mean_order_ab_probability": 0.5659079551696777,
+      "mean_order_confidence": 0.5711196660995483,
+      "writer_top_sites_changed_during_training": 38,
+      "key_count": 128,
+      "ratio_minus_direct_max_complex_abs": 9.707508752399008e-07
+    }
+  ],
+  "interpretation": [
+    "Trained routing did not beat same-initialization frozen routing at 350 steps; geometry-learning PASS failed.",
+    "Phase-ratio readout equals direct-site phase for selected hard path; no extra information demonstrated.",
+    "Phase memory beats some weak trained baselines on longer streams but never exact 16-byte bitset.",
+    "The fixed known key alphabet offers an exceptionally strong indexing prior.",
+    "Learned order-mixture did not prove a useful ordering advantage.",
+    "This is not an end-of-Transformer architecture result."
+  ]
+}
