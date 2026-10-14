@@ -1,0 +1,74 @@
+{
+  "gate": "Gate 1 exploratory",
+  "runs": [
+    {
+      "seed": 41,
+      "seconds": 203.624,
+      "independent_64": {
+        "phase_graph:ratio": 0.822266,
+        "phase_graph:paired": 0.808594,
+        "phase_graph:single": 0.712891,
+        "phase_graph:fixed_route": 0.521484,
+        "phase_graph:learned_order_policy": 0.652344,
+        "phase_graph:direct_addressed": 0.822266,
+        "phase_fixed_router:ratio": 0.873047,
+        "phase_fixed_router:paired": 0.873047,
+        "phase_fixed_router:single": 0.652344,
+        "phase_fixed_router:fixed_route": 0.53125,
+        "phase_fixed_router:learned_order_policy": 0.566406,
+        "phase_fixed_router:direct_addressed": 0.873047,
+        "gru:gru": 0.568359,
+        "fast_weight:fast_weight": 0.601562,
+        "window_attention:attention": 0.804688,
+        "exact_window_64B:last_match": 0.805664,
+        "indexed_bit_table_16B:exact": 1.0
+      }
+    },
+    {
+      "seed": 97,
+      "seconds": 199.605,
+      "independent_64": {
+        "phase_graph:ratio": 0.824219,
+        "phase_graph:paired": 0.822266,
+        "phase_graph:single": 0.585938,
+        "phase_graph:fixed_route": 0.556641,
+        "phase_graph:learned_order_policy": 0.583984,
+        "phase_graph:direct_addressed": 0.824219,
+        "phase_fixed_router:ratio": 0.865234,
+        "phase_fixed_router:paired": 0.865234,
+        "phase_fixed_router:single": 0.625,
+        "phase_fixed_router:fixed_route": 0.537109,
+        "phase_fixed_router:learned_order_policy": 0.523438,
+        "phase_fixed_router:direct_addressed": 0.865234,
+        "gru:gru": 0.544922,
+        "fast_weight:fast_weight": 0.570312,
+        "window_attention:attention": 0.804688,
+        "exact_window_64B:last_match": 0.805664,
+        "indexed_bit_table_16B:exact": 1.0
+      }
+    },
+    {
+      "seed": 127,
+      "seconds": 198.926,
+      "independent_64": {
+        "phase_graph:ratio": 0.876953,
+        "phase_graph:paired": 0.873047,
+        "phase_graph:single": 0.699219,
+        "phase_graph:fixed_route": 0.519531,
+        "phase_graph:learned_order_policy": 0.625,
+        "phase_graph:direct_addressed": 0.876953,
+        "phase_fixed_router:ratio": 0.849609,
+        "phase_fixed_router:paired": 0.849609,
+        "phase_fixed_router:single": 0.677734,
+        "phase_fixed_router:fixed_route": 0.541016,
+        "phase_fixed_router:learned_order_policy": 0.601562,
+        "phase_fixed_router:direct_addressed": 0.849609,
+        "gru:gru": 0.533203,
+        "fast_weight:fast_weight": 0.585938,
+        "window_attention:attention": 0.800781,
+        "exact_window_64B:last_match": 0.804688,
+        "indexed_bit_table_16B:exact": 1.0
+      }
+    }
+  ]
+}
