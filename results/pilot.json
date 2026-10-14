@@ -1,0 +1,4060 @@
+{
+  "protocol": "gate_0_v1; synthetic fixed known key universe; streaming write; no trained model",
+  "seed": 41,
+  "trials_per_scenario_count": 36,
+  "key_space": 256,
+  "budgets_bytes": {
+    "geometry": 64,
+    "bounded_tape": 64,
+    "indexed_bits": 32,
+    "structured_group_oracle": 2,
+    "full_tape_per_fact": 2
+  },
+  "queries": "all written keys once per independent trial; missing bounded-tape entry scored 0.5 expected accuracy",
+  "important_constraints": [
+    "The key-to-site function and routes are public, hard-coded and free/shared; no routing learning is measured.",
+    "Structured scenario is GIVEN a 16-key group rule (oracle); it is not learned from examples.",
+    "Geometry has 63 data sites + 1 reference port, collisions overwrite, and has no key identity tags.",
+    "Each paired measurement uses 2 complex endpoint readings and 2 path traversals; single uses 1.",
+    "Indexed bits exploit the small known 256-key domain: 32-byte exact factual memory; this is a strong task-specific baseline.",
+    "No learned Transformer, KV cache, neural generalization or wall-clock/energy comparison is present.",
+    "Accuracy measures retrieval of facts that were written; not language modeling or unseen world inference."
+  ],
+  "runtime": {
+    "python": "3.13.5"
+  },
+  "results": [
+    {
+      "scenario": "independent_bits",
+      "facts": 8,
+      "reader": "bounded_tape",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 8,
+      "reader": "direct_addressed_phase",
+      "accuracy": 0.972222,
+      "trial_stderr": 0.008784,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 8,
+      "reader": "full_tape",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 8,
+      "reader": "indexed_bits",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 8,
+      "reader": "order_difference",
+      "accuracy": 0.795139,
+      "trial_stderr": 0.029527,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 8,
+      "reader": "paired_ratio",
+      "accuracy": 0.972222,
+      "trial_stderr": 0.008784,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 8,
+      "reader": "raw_pair_analytic",
+      "accuracy": 0.972222,
+      "trial_stderr": 0.008784,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 8,
+      "reader": "reversed_wave",
+      "accuracy": 0.513889,
+      "trial_stderr": 0.026248,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 8,
+      "reader": "single_wave",
+      "accuracy": 0.8125,
+      "trial_stderr": 0.030088,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 16,
+      "reader": "bounded_tape",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 16,
+      "reader": "direct_addressed_phase",
+      "accuracy": 0.951389,
+      "trial_stderr": 0.007918,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 16,
+      "reader": "full_tape",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 16,
+      "reader": "indexed_bits",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 16,
+      "reader": "order_difference",
+      "accuracy": 0.692708,
+      "trial_stderr": 0.027881,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 16,
+      "reader": "paired_ratio",
+      "accuracy": 0.951389,
+      "trial_stderr": 0.007918,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 16,
+      "reader": "raw_pair_analytic",
+      "accuracy": 0.951389,
+      "trial_stderr": 0.007918,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 16,
+      "reader": "reversed_wave",
+      "accuracy": 0.526042,
+      "trial_stderr": 0.018696,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 16,
+      "reader": "single_wave",
+      "accuracy": 0.722222,
+      "trial_stderr": 0.024071,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 32,
+      "reader": "bounded_tape",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 32,
+      "reader": "direct_addressed_phase",
+      "accuracy": 0.91059,
+      "trial_stderr": 0.006488,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 32,
+      "reader": "full_tape",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 32,
+      "reader": "indexed_bits",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 32,
+      "reader": "order_difference",
+      "accuracy": 0.592014,
+      "trial_stderr": 0.018253,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 32,
+      "reader": "paired_ratio",
+      "accuracy": 0.91059,
+      "trial_stderr": 0.006488,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 32,
+      "reader": "raw_pair_analytic",
+      "accuracy": 0.91059,
+      "trial_stderr": 0.006488,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 32,
+      "reader": "reversed_wave",
+      "accuracy": 0.5,
+      "trial_stderr": 0.013409,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 32,
+      "reader": "single_wave",
+      "accuracy": 0.596354,
+      "trial_stderr": 0.019582,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 64,
+      "reader": "bounded_tape",
+      "accuracy": 0.75,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 64,
+      "reader": "direct_addressed_phase",
+      "accuracy": 0.838976,
+      "trial_stderr": 0.006434,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 64,
+      "reader": "full_tape",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 64,
+      "reader": "indexed_bits",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 64,
+      "reader": "order_difference",
+      "accuracy": 0.492188,
+      "trial_stderr": 0.015217,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 64,
+      "reader": "paired_ratio",
+      "accuracy": 0.838976,
+      "trial_stderr": 0.006434,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 64,
+      "reader": "raw_pair_analytic",
+      "accuracy": 0.838976,
+      "trial_stderr": 0.006434,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 64,
+      "reader": "reversed_wave",
+      "accuracy": 0.521267,
+      "trial_stderr": 0.011765,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 64,
+      "reader": "single_wave",
+      "accuracy": 0.503038,
+      "trial_stderr": 0.015697,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 96,
+      "reader": "bounded_tape",
+      "accuracy": 0.666667,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 96,
+      "reader": "direct_addressed_phase",
+      "accuracy": 0.769965,
+      "trial_stderr": 0.006949,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 96,
+      "reader": "full_tape",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 96,
+      "reader": "indexed_bits",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 96,
+      "reader": "order_difference",
+      "accuracy": 0.488137,
+      "trial_stderr": 0.00897,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 96,
+      "reader": "paired_ratio",
+      "accuracy": 0.769965,
+      "trial_stderr": 0.006949,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 96,
+      "reader": "raw_pair_analytic",
+      "accuracy": 0.769965,
+      "trial_stderr": 0.006949,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 96,
+      "reader": "reversed_wave",
+      "accuracy": 0.499132,
+      "trial_stderr": 0.008314,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 96,
+      "reader": "single_wave",
+      "accuracy": 0.491898,
+      "trial_stderr": 0.009787,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 128,
+      "reader": "bounded_tape",
+      "accuracy": 0.625,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 128,
+      "reader": "direct_addressed_phase",
+      "accuracy": 0.744141,
+      "trial_stderr": 0.005554,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 128,
+      "reader": "full_tape",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 128,
+      "reader": "indexed_bits",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 128,
+      "reader": "order_difference",
+      "accuracy": 0.479167,
+      "trial_stderr": 0.007899,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 128,
+      "reader": "paired_ratio",
+      "accuracy": 0.744141,
+      "trial_stderr": 0.005554,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 128,
+      "reader": "raw_pair_analytic",
+      "accuracy": 0.744141,
+      "trial_stderr": 0.005554,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 128,
+      "reader": "reversed_wave",
+      "accuracy": 0.5102,
+      "trial_stderr": 0.008133,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 128,
+      "reader": "single_wave",
+      "accuracy": 0.480252,
+      "trial_stderr": 0.009125,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 192,
+      "reader": "bounded_tape",
+      "accuracy": 0.583333,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 192,
+      "reader": "direct_addressed_phase",
+      "accuracy": 0.661169,
+      "trial_stderr": 0.004654,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 192,
+      "reader": "full_tape",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 192,
+      "reader": "indexed_bits",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 192,
+      "reader": "order_difference",
+      "accuracy": 0.493924,
+      "trial_stderr": 0.007111,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 192,
+      "reader": "paired_ratio",
+      "accuracy": 0.661169,
+      "trial_stderr": 0.004654,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 192,
+      "reader": "raw_pair_analytic",
+      "accuracy": 0.661169,
+      "trial_stderr": 0.004654,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 192,
+      "reader": "reversed_wave",
+      "accuracy": 0.504485,
+      "trial_stderr": 0.006335,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 192,
+      "reader": "single_wave",
+      "accuracy": 0.491898,
+      "trial_stderr": 0.006367,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 256,
+      "reader": "bounded_tape",
+      "accuracy": 0.5625,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 256,
+      "reader": "direct_addressed_phase",
+      "accuracy": 0.624891,
+      "trial_stderr": 0.005403,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 256,
+      "reader": "full_tape",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 256,
+      "reader": "indexed_bits",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 256,
+      "reader": "order_difference",
+      "accuracy": 0.481988,
+      "trial_stderr": 0.005898,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 256,
+      "reader": "paired_ratio",
+      "accuracy": 0.624891,
+      "trial_stderr": 0.005403,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 256,
+      "reader": "raw_pair_analytic",
+      "accuracy": 0.624891,
+      "trial_stderr": 0.005403,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 256,
+      "reader": "reversed_wave",
+      "accuracy": 0.5102,
+      "trial_stderr": 0.004708,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 256,
+      "reader": "single_wave",
+      "accuracy": 0.487088,
+      "trial_stderr": 0.005138,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 8,
+      "reader": "bounded_tape",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 8,
+      "reader": "direct_addressed_phase",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 8,
+      "reader": "full_tape",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 8,
+      "reader": "group_oracle",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 8,
+      "reader": "indexed_bits",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 8,
+      "reader": "order_difference",
+      "accuracy": 0.708333,
+      "trial_stderr": 0.045097,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 8,
+      "reader": "paired_ratio",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 8,
+      "reader": "raw_pair_analytic",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 8,
+      "reader": "reversed_wave",
+      "accuracy": 0.520833,
+      "trial_stderr": 0.037101,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 8,
+      "reader": "single_wave",
+      "accuracy": 0.767361,
+      "trial_stderr": 0.039262,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 16,
+      "reader": "bounded_tape",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 16,
+      "reader": "direct_addressed_phase",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 16,
+      "reader": "full_tape",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 16,
+      "reader": "group_oracle",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 16,
+      "reader": "indexed_bits",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 16,
+      "reader": "order_difference",
+      "accuracy": 0.479167,
+      "trial_stderr": 0.039919,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 16,
+      "reader": "paired_ratio",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 16,
+      "reader": "raw_pair_analytic",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 16,
+      "reader": "reversed_wave",
+      "accuracy": 0.552083,
+      "trial_stderr": 0.031644,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 16,
+      "reader": "single_wave",
+      "accuracy": 0.548611,
+      "trial_stderr": 0.040467,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 32,
+      "reader": "bounded_tape",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 32,
+      "reader": "direct_addressed_phase",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 32,
+      "reader": "full_tape",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 32,
+      "reader": "group_oracle",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 32,
+      "reader": "indexed_bits",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 32,
+      "reader": "order_difference",
+      "accuracy": 0.434896,
+      "trial_stderr": 0.03101,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 32,
+      "reader": "paired_ratio",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 32,
+      "reader": "raw_pair_analytic",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 32,
+      "reader": "reversed_wave",
+      "accuracy": 0.525174,
+      "trial_stderr": 0.022508,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 32,
+      "reader": "single_wave",
+      "accuracy": 0.448785,
+      "trial_stderr": 0.03247,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 64,
+      "reader": "bounded_tape",
+      "accuracy": 0.75,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 64,
+      "reader": "direct_addressed_phase",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 64,
+      "reader": "full_tape",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 64,
+      "reader": "group_oracle",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 64,
+      "reader": "indexed_bits",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 64,
+      "reader": "order_difference",
+      "accuracy": 0.419271,
+      "trial_stderr": 0.02558,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 64,
+      "reader": "paired_ratio",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 64,
+      "reader": "raw_pair_analytic",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 64,
+      "reader": "reversed_wave",
+      "accuracy": 0.503038,
+      "trial_stderr": 0.020285,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 64,
+      "reader": "single_wave",
+      "accuracy": 0.488281,
+      "trial_stderr": 0.028414,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 96,
+      "reader": "bounded_tape",
+      "accuracy": 0.666667,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 96,
+      "reader": "direct_addressed_phase",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 96,
+      "reader": "full_tape",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 96,
+      "reader": "group_oracle",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 96,
+      "reader": "indexed_bits",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 96,
+      "reader": "order_difference",
+      "accuracy": 0.467882,
+      "trial_stderr": 0.026461,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 96,
+      "reader": "paired_ratio",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 96,
+      "reader": "raw_pair_analytic",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 96,
+      "reader": "reversed_wave",
+      "accuracy": 0.532697,
+      "trial_stderr": 0.020842,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 96,
+      "reader": "single_wave",
+      "accuracy": 0.453414,
+      "trial_stderr": 0.026881,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 128,
+      "reader": "bounded_tape",
+      "accuracy": 0.625,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 128,
+      "reader": "direct_addressed_phase",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 128,
+      "reader": "full_tape",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 128,
+      "reader": "group_oracle",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 128,
+      "reader": "indexed_bits",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 128,
+      "reader": "order_difference",
+      "accuracy": 0.38151,
+      "trial_stderr": 0.02623,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 128,
+      "reader": "paired_ratio",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 128,
+      "reader": "raw_pair_analytic",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 128,
+      "reader": "reversed_wave",
+      "accuracy": 0.54145,
+      "trial_stderr": 0.021834,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 128,
+      "reader": "single_wave",
+      "accuracy": 0.463976,
+      "trial_stderr": 0.023957,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 192,
+      "reader": "bounded_tape",
+      "accuracy": 0.583333,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 192,
+      "reader": "direct_addressed_phase",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 192,
+      "reader": "full_tape",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 192,
+      "reader": "group_oracle",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 192,
+      "reader": "indexed_bits",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 192,
+      "reader": "order_difference",
+      "accuracy": 0.407263,
+      "trial_stderr": 0.030302,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 192,
+      "reader": "paired_ratio",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 192,
+      "reader": "raw_pair_analytic",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 192,
+      "reader": "reversed_wave",
+      "accuracy": 0.512297,
+      "trial_stderr": 0.027318,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 192,
+      "reader": "single_wave",
+      "accuracy": 0.429109,
+      "trial_stderr": 0.031155,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 256,
+      "reader": "bounded_tape",
+      "accuracy": 0.5625,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 256,
+      "reader": "direct_addressed_phase",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 256,
+      "reader": "full_tape",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 256,
+      "reader": "group_oracle",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 256,
+      "reader": "indexed_bits",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 256,
+      "reader": "order_difference",
+      "accuracy": 0.397569,
+      "trial_stderr": 0.02637,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 256,
+      "reader": "paired_ratio",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 256,
+      "reader": "raw_pair_analytic",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 256,
+      "reader": "reversed_wave",
+      "accuracy": 0.550347,
+      "trial_stderr": 0.02373,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 256,
+      "reader": "single_wave",
+      "accuracy": 0.440972,
+      "trial_stderr": 0.021267,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 8,
+      "reader": "bounded_tape",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 8,
+      "reader": "direct_addressed_phase",
+      "accuracy": 0.881944,
+      "trial_stderr": 0.018597,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 8,
+      "reader": "full_tape",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 8,
+      "reader": "indexed_bits",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 8,
+      "reader": "order_difference",
+      "accuracy": 0.684028,
+      "trial_stderr": 0.035033,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 8,
+      "reader": "paired_ratio",
+      "accuracy": 0.881944,
+      "trial_stderr": 0.018597,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 8,
+      "reader": "raw_pair_analytic",
+      "accuracy": 0.881944,
+      "trial_stderr": 0.018597,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 8,
+      "reader": "reversed_wave",
+      "accuracy": 0.472222,
+      "trial_stderr": 0.027778,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 8,
+      "reader": "single_wave",
+      "accuracy": 0.684028,
+      "trial_stderr": 0.039992,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 16,
+      "reader": "bounded_tape",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 16,
+      "reader": "direct_addressed_phase",
+      "accuracy": 0.814236,
+      "trial_stderr": 0.011808,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 16,
+      "reader": "full_tape",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 16,
+      "reader": "indexed_bits",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 16,
+      "reader": "order_difference",
+      "accuracy": 0.512153,
+      "trial_stderr": 0.02737,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 16,
+      "reader": "paired_ratio",
+      "accuracy": 0.814236,
+      "trial_stderr": 0.011808,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 16,
+      "reader": "raw_pair_analytic",
+      "accuracy": 0.814236,
+      "trial_stderr": 0.011808,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 16,
+      "reader": "reversed_wave",
+      "accuracy": 0.503472,
+      "trial_stderr": 0.020067,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 16,
+      "reader": "single_wave",
+      "accuracy": 0.526042,
+      "trial_stderr": 0.026514,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 32,
+      "reader": "bounded_tape",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 32,
+      "reader": "direct_addressed_phase",
+      "accuracy": 0.713542,
+      "trial_stderr": 0.009523,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 32,
+      "reader": "full_tape",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 32,
+      "reader": "indexed_bits",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 32,
+      "reader": "order_difference",
+      "accuracy": 0.465278,
+      "trial_stderr": 0.017773,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 32,
+      "reader": "paired_ratio",
+      "accuracy": 0.713542,
+      "trial_stderr": 0.009523,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 32,
+      "reader": "raw_pair_analytic",
+      "accuracy": 0.713542,
+      "trial_stderr": 0.009523,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 32,
+      "reader": "reversed_wave",
+      "accuracy": 0.522569,
+      "trial_stderr": 0.013502,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 32,
+      "reader": "single_wave",
+      "accuracy": 0.46441,
+      "trial_stderr": 0.021208,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 64,
+      "reader": "bounded_tape",
+      "accuracy": 0.75,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 64,
+      "reader": "direct_addressed_phase",
+      "accuracy": 0.621962,
+      "trial_stderr": 0.006814,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 64,
+      "reader": "full_tape",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 64,
+      "reader": "indexed_bits",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 64,
+      "reader": "order_difference",
+      "accuracy": 0.47526,
+      "trial_stderr": 0.014187,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 64,
+      "reader": "paired_ratio",
+      "accuracy": 0.621962,
+      "trial_stderr": 0.006814,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 64,
+      "reader": "raw_pair_analytic",
+      "accuracy": 0.621962,
+      "trial_stderr": 0.006814,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 64,
+      "reader": "reversed_wave",
+      "accuracy": 0.516059,
+      "trial_stderr": 0.010162,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 64,
+      "reader": "single_wave",
+      "accuracy": 0.474826,
+      "trial_stderr": 0.013121,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 96,
+      "reader": "bounded_tape",
+      "accuracy": 0.666667,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 96,
+      "reader": "direct_addressed_phase",
+      "accuracy": 0.588542,
+      "trial_stderr": 0.00777,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 96,
+      "reader": "full_tape",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 96,
+      "reader": "indexed_bits",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 96,
+      "reader": "order_difference",
+      "accuracy": 0.49537,
+      "trial_stderr": 0.008253,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 96,
+      "reader": "paired_ratio",
+      "accuracy": 0.588542,
+      "trial_stderr": 0.00777,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 96,
+      "reader": "raw_pair_analytic",
+      "accuracy": 0.588542,
+      "trial_stderr": 0.00777,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 96,
+      "reader": "reversed_wave",
+      "accuracy": 0.494792,
+      "trial_stderr": 0.008935,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 96,
+      "reader": "single_wave",
+      "accuracy": 0.507523,
+      "trial_stderr": 0.007771,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 128,
+      "reader": "bounded_tape",
+      "accuracy": 0.625,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 128,
+      "reader": "direct_addressed_phase",
+      "accuracy": 0.546007,
+      "trial_stderr": 0.005601,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 128,
+      "reader": "full_tape",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 128,
+      "reader": "indexed_bits",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 128,
+      "reader": "order_difference",
+      "accuracy": 0.491319,
+      "trial_stderr": 0.006586,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 128,
+      "reader": "paired_ratio",
+      "accuracy": 0.546007,
+      "trial_stderr": 0.005601,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 128,
+      "reader": "raw_pair_analytic",
+      "accuracy": 0.546007,
+      "trial_stderr": 0.005601,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 128,
+      "reader": "reversed_wave",
+      "accuracy": 0.502604,
+      "trial_stderr": 0.007978,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 128,
+      "reader": "single_wave",
+      "accuracy": 0.485026,
+      "trial_stderr": 0.006949,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 192,
+      "reader": "bounded_tape",
+      "accuracy": 0.583333,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 192,
+      "reader": "direct_addressed_phase",
+      "accuracy": 0.542245,
+      "trial_stderr": 0.005602,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 192,
+      "reader": "full_tape",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 192,
+      "reader": "indexed_bits",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 192,
+      "reader": "order_difference",
+      "accuracy": 0.481337,
+      "trial_stderr": 0.00652,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 192,
+      "reader": "paired_ratio",
+      "accuracy": 0.542245,
+      "trial_stderr": 0.005602,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 192,
+      "reader": "raw_pair_analytic",
+      "accuracy": 0.542245,
+      "trial_stderr": 0.005602,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 192,
+      "reader": "reversed_wave",
+      "accuracy": 0.509115,
+      "trial_stderr": 0.004837,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 192,
+      "reader": "single_wave",
+      "accuracy": 0.492911,
+      "trial_stderr": 0.006264,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 256,
+      "reader": "bounded_tape",
+      "accuracy": 0.5625,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 256,
+      "reader": "direct_addressed_phase",
+      "accuracy": 0.542426,
+      "trial_stderr": 0.00486,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 256,
+      "reader": "full_tape",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 256,
+      "reader": "indexed_bits",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 256,
+      "reader": "order_difference",
+      "accuracy": 0.484918,
+      "trial_stderr": 0.0047,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 256,
+      "reader": "paired_ratio",
+      "accuracy": 0.542426,
+      "trial_stderr": 0.00486,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 256,
+      "reader": "raw_pair_analytic",
+      "accuracy": 0.542426,
+      "trial_stderr": 0.00486,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 256,
+      "reader": "reversed_wave",
+      "accuracy": 0.5051,
+      "trial_stderr": 0.004955,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 256,
+      "reader": "single_wave",
+      "accuracy": 0.481662,
+      "trial_stderr": 0.004901,
+      "trials": 36,
+      "condition": "clean"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 8,
+      "reader": "bounded_tape",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 8,
+      "reader": "direct_addressed_phase",
+      "accuracy": 0.972222,
+      "trial_stderr": 0.008784,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 8,
+      "reader": "full_tape",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 8,
+      "reader": "indexed_bits",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 8,
+      "reader": "order_difference",
+      "accuracy": 0.527778,
+      "trial_stderr": 0.027778,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 8,
+      "reader": "paired_ratio",
+      "accuracy": 0.972222,
+      "trial_stderr": 0.008784,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 8,
+      "reader": "raw_pair_analytic",
+      "accuracy": 0.972222,
+      "trial_stderr": 0.008784,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 8,
+      "reader": "reversed_wave",
+      "accuracy": 0.46875,
+      "trial_stderr": 0.023025,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 8,
+      "reader": "single_wave",
+      "accuracy": 0.489583,
+      "trial_stderr": 0.03125,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 16,
+      "reader": "bounded_tape",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 16,
+      "reader": "direct_addressed_phase",
+      "accuracy": 0.951389,
+      "trial_stderr": 0.007918,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 16,
+      "reader": "full_tape",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 16,
+      "reader": "indexed_bits",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 16,
+      "reader": "order_difference",
+      "accuracy": 0.498264,
+      "trial_stderr": 0.017159,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 16,
+      "reader": "paired_ratio",
+      "accuracy": 0.951389,
+      "trial_stderr": 0.007918,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 16,
+      "reader": "raw_pair_analytic",
+      "accuracy": 0.951389,
+      "trial_stderr": 0.007918,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 16,
+      "reader": "reversed_wave",
+      "accuracy": 0.489583,
+      "trial_stderr": 0.017695,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 16,
+      "reader": "single_wave",
+      "accuracy": 0.487847,
+      "trial_stderr": 0.021966,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 32,
+      "reader": "bounded_tape",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 32,
+      "reader": "direct_addressed_phase",
+      "accuracy": 0.91059,
+      "trial_stderr": 0.006488,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 32,
+      "reader": "full_tape",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 32,
+      "reader": "indexed_bits",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 32,
+      "reader": "order_difference",
+      "accuracy": 0.475694,
+      "trial_stderr": 0.01387,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 32,
+      "reader": "paired_ratio",
+      "accuracy": 0.91059,
+      "trial_stderr": 0.006488,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 32,
+      "reader": "raw_pair_analytic",
+      "accuracy": 0.91059,
+      "trial_stderr": 0.006488,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 32,
+      "reader": "reversed_wave",
+      "accuracy": 0.518229,
+      "trial_stderr": 0.014908,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 32,
+      "reader": "single_wave",
+      "accuracy": 0.497396,
+      "trial_stderr": 0.014216,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 64,
+      "reader": "bounded_tape",
+      "accuracy": 0.75,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 64,
+      "reader": "direct_addressed_phase",
+      "accuracy": 0.838976,
+      "trial_stderr": 0.006434,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 64,
+      "reader": "full_tape",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 64,
+      "reader": "indexed_bits",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 64,
+      "reader": "order_difference",
+      "accuracy": 0.496528,
+      "trial_stderr": 0.010456,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 64,
+      "reader": "paired_ratio",
+      "accuracy": 0.838976,
+      "trial_stderr": 0.006434,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 64,
+      "reader": "raw_pair_analytic",
+      "accuracy": 0.838976,
+      "trial_stderr": 0.006434,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 64,
+      "reader": "reversed_wave",
+      "accuracy": 0.521267,
+      "trial_stderr": 0.010401,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 64,
+      "reader": "single_wave",
+      "accuracy": 0.511285,
+      "trial_stderr": 0.010316,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 96,
+      "reader": "bounded_tape",
+      "accuracy": 0.666667,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 96,
+      "reader": "direct_addressed_phase",
+      "accuracy": 0.769965,
+      "trial_stderr": 0.006949,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 96,
+      "reader": "full_tape",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 96,
+      "reader": "indexed_bits",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 96,
+      "reader": "order_difference",
+      "accuracy": 0.501736,
+      "trial_stderr": 0.01056,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 96,
+      "reader": "paired_ratio",
+      "accuracy": 0.769965,
+      "trial_stderr": 0.006949,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 96,
+      "reader": "raw_pair_analytic",
+      "accuracy": 0.769965,
+      "trial_stderr": 0.006949,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 96,
+      "reader": "reversed_wave",
+      "accuracy": 0.508681,
+      "trial_stderr": 0.009441,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 96,
+      "reader": "single_wave",
+      "accuracy": 0.505498,
+      "trial_stderr": 0.009613,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 128,
+      "reader": "bounded_tape",
+      "accuracy": 0.625,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 128,
+      "reader": "direct_addressed_phase",
+      "accuracy": 0.744141,
+      "trial_stderr": 0.005554,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 128,
+      "reader": "full_tape",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 128,
+      "reader": "indexed_bits",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 128,
+      "reader": "order_difference",
+      "accuracy": 0.505642,
+      "trial_stderr": 0.006511,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 128,
+      "reader": "paired_ratio",
+      "accuracy": 0.744141,
+      "trial_stderr": 0.005554,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 128,
+      "reader": "raw_pair_analytic",
+      "accuracy": 0.744141,
+      "trial_stderr": 0.005554,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 128,
+      "reader": "reversed_wave",
+      "accuracy": 0.508681,
+      "trial_stderr": 0.007211,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 128,
+      "reader": "single_wave",
+      "accuracy": 0.517361,
+      "trial_stderr": 0.007254,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 192,
+      "reader": "bounded_tape",
+      "accuracy": 0.583333,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 192,
+      "reader": "direct_addressed_phase",
+      "accuracy": 0.661169,
+      "trial_stderr": 0.004654,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 192,
+      "reader": "full_tape",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 192,
+      "reader": "indexed_bits",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 192,
+      "reader": "order_difference",
+      "accuracy": 0.50463,
+      "trial_stderr": 0.006337,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 192,
+      "reader": "paired_ratio",
+      "accuracy": 0.661169,
+      "trial_stderr": 0.004654,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 192,
+      "reader": "raw_pair_analytic",
+      "accuracy": 0.661169,
+      "trial_stderr": 0.004654,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 192,
+      "reader": "reversed_wave",
+      "accuracy": 0.499277,
+      "trial_stderr": 0.006988,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 192,
+      "reader": "single_wave",
+      "accuracy": 0.515914,
+      "trial_stderr": 0.005116,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 256,
+      "reader": "bounded_tape",
+      "accuracy": 0.5625,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 256,
+      "reader": "direct_addressed_phase",
+      "accuracy": 0.624891,
+      "trial_stderr": 0.005403,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 256,
+      "reader": "full_tape",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 256,
+      "reader": "indexed_bits",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 256,
+      "reader": "order_difference",
+      "accuracy": 0.499674,
+      "trial_stderr": 0.00558,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 256,
+      "reader": "paired_ratio",
+      "accuracy": 0.624891,
+      "trial_stderr": 0.005403,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 256,
+      "reader": "raw_pair_analytic",
+      "accuracy": 0.624891,
+      "trial_stderr": 0.005403,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 256,
+      "reader": "reversed_wave",
+      "accuracy": 0.502062,
+      "trial_stderr": 0.00492,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "independent_bits",
+      "facts": 256,
+      "reader": "single_wave",
+      "accuracy": 0.497613,
+      "trial_stderr": 0.006198,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 8,
+      "reader": "bounded_tape",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 8,
+      "reader": "direct_addressed_phase",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 8,
+      "reader": "full_tape",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 8,
+      "reader": "group_oracle",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 8,
+      "reader": "indexed_bits",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 8,
+      "reader": "order_difference",
+      "accuracy": 0.520833,
+      "trial_stderr": 0.025148,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 8,
+      "reader": "paired_ratio",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 8,
+      "reader": "raw_pair_analytic",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 8,
+      "reader": "reversed_wave",
+      "accuracy": 0.479167,
+      "trial_stderr": 0.030088,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 8,
+      "reader": "single_wave",
+      "accuracy": 0.510417,
+      "trial_stderr": 0.026992,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 16,
+      "reader": "bounded_tape",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 16,
+      "reader": "direct_addressed_phase",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 16,
+      "reader": "full_tape",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 16,
+      "reader": "group_oracle",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 16,
+      "reader": "indexed_bits",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 16,
+      "reader": "order_difference",
+      "accuracy": 0.494792,
+      "trial_stderr": 0.024572,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 16,
+      "reader": "paired_ratio",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 16,
+      "reader": "raw_pair_analytic",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 16,
+      "reader": "reversed_wave",
+      "accuracy": 0.517361,
+      "trial_stderr": 0.021795,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 16,
+      "reader": "single_wave",
+      "accuracy": 0.482639,
+      "trial_stderr": 0.024092,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 32,
+      "reader": "bounded_tape",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 32,
+      "reader": "direct_addressed_phase",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 32,
+      "reader": "full_tape",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 32,
+      "reader": "group_oracle",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 32,
+      "reader": "indexed_bits",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 32,
+      "reader": "order_difference",
+      "accuracy": 0.508681,
+      "trial_stderr": 0.011452,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 32,
+      "reader": "paired_ratio",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 32,
+      "reader": "raw_pair_analytic",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 32,
+      "reader": "reversed_wave",
+      "accuracy": 0.511285,
+      "trial_stderr": 0.013418,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 32,
+      "reader": "single_wave",
+      "accuracy": 0.511285,
+      "trial_stderr": 0.014474,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 64,
+      "reader": "bounded_tape",
+      "accuracy": 0.75,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 64,
+      "reader": "direct_addressed_phase",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 64,
+      "reader": "full_tape",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 64,
+      "reader": "group_oracle",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 64,
+      "reader": "indexed_bits",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 64,
+      "reader": "order_difference",
+      "accuracy": 0.482639,
+      "trial_stderr": 0.00925,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 64,
+      "reader": "paired_ratio",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 64,
+      "reader": "raw_pair_analytic",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 64,
+      "reader": "reversed_wave",
+      "accuracy": 0.519097,
+      "trial_stderr": 0.009443,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 64,
+      "reader": "single_wave",
+      "accuracy": 0.49566,
+      "trial_stderr": 0.011268,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 96,
+      "reader": "bounded_tape",
+      "accuracy": 0.666667,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 96,
+      "reader": "direct_addressed_phase",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 96,
+      "reader": "full_tape",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 96,
+      "reader": "group_oracle",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 96,
+      "reader": "indexed_bits",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 96,
+      "reader": "order_difference",
+      "accuracy": 0.499132,
+      "trial_stderr": 0.006658,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 96,
+      "reader": "paired_ratio",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 96,
+      "reader": "raw_pair_analytic",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 96,
+      "reader": "reversed_wave",
+      "accuracy": 0.484664,
+      "trial_stderr": 0.007,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 96,
+      "reader": "single_wave",
+      "accuracy": 0.49103,
+      "trial_stderr": 0.007865,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 128,
+      "reader": "bounded_tape",
+      "accuracy": 0.625,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 128,
+      "reader": "direct_addressed_phase",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 128,
+      "reader": "full_tape",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 128,
+      "reader": "group_oracle",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 128,
+      "reader": "indexed_bits",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 128,
+      "reader": "order_difference",
+      "accuracy": 0.504123,
+      "trial_stderr": 0.007019,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 128,
+      "reader": "paired_ratio",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 128,
+      "reader": "raw_pair_analytic",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 128,
+      "reader": "reversed_wave",
+      "accuracy": 0.503689,
+      "trial_stderr": 0.004867,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 128,
+      "reader": "single_wave",
+      "accuracy": 0.506076,
+      "trial_stderr": 0.007393,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 192,
+      "reader": "bounded_tape",
+      "accuracy": 0.583333,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 192,
+      "reader": "direct_addressed_phase",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 192,
+      "reader": "full_tape",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 192,
+      "reader": "group_oracle",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 192,
+      "reader": "indexed_bits",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 192,
+      "reader": "order_difference",
+      "accuracy": 0.504196,
+      "trial_stderr": 0.005674,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 192,
+      "reader": "paired_ratio",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 192,
+      "reader": "raw_pair_analytic",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 192,
+      "reader": "reversed_wave",
+      "accuracy": 0.49103,
+      "trial_stderr": 0.006034,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 192,
+      "reader": "single_wave",
+      "accuracy": 0.50463,
+      "trial_stderr": 0.005791,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 256,
+      "reader": "bounded_tape",
+      "accuracy": 0.5625,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 256,
+      "reader": "direct_addressed_phase",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 256,
+      "reader": "full_tape",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 256,
+      "reader": "group_oracle",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 256,
+      "reader": "indexed_bits",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 256,
+      "reader": "order_difference",
+      "accuracy": 0.486328,
+      "trial_stderr": 0.004576,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 256,
+      "reader": "paired_ratio",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 256,
+      "reader": "raw_pair_analytic",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 256,
+      "reader": "reversed_wave",
+      "accuracy": 0.50727,
+      "trial_stderr": 0.005568,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "shared_group_bits",
+      "facts": 256,
+      "reader": "single_wave",
+      "accuracy": 0.498372,
+      "trial_stderr": 0.005345,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 8,
+      "reader": "bounded_tape",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 8,
+      "reader": "direct_addressed_phase",
+      "accuracy": 0.881944,
+      "trial_stderr": 0.018597,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 8,
+      "reader": "full_tape",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 8,
+      "reader": "indexed_bits",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 8,
+      "reader": "order_difference",
+      "accuracy": 0.510417,
+      "trial_stderr": 0.034994,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 8,
+      "reader": "paired_ratio",
+      "accuracy": 0.881944,
+      "trial_stderr": 0.018597,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 8,
+      "reader": "raw_pair_analytic",
+      "accuracy": 0.881944,
+      "trial_stderr": 0.018597,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 8,
+      "reader": "reversed_wave",
+      "accuracy": 0.489583,
+      "trial_stderr": 0.03125,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 8,
+      "reader": "single_wave",
+      "accuracy": 0.520833,
+      "trial_stderr": 0.027951,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 16,
+      "reader": "bounded_tape",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 16,
+      "reader": "direct_addressed_phase",
+      "accuracy": 0.814236,
+      "trial_stderr": 0.011808,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 16,
+      "reader": "full_tape",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 16,
+      "reader": "indexed_bits",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 16,
+      "reader": "order_difference",
+      "accuracy": 0.515625,
+      "trial_stderr": 0.015822,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 16,
+      "reader": "paired_ratio",
+      "accuracy": 0.814236,
+      "trial_stderr": 0.011808,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 16,
+      "reader": "raw_pair_analytic",
+      "accuracy": 0.814236,
+      "trial_stderr": 0.011808,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 16,
+      "reader": "reversed_wave",
+      "accuracy": 0.487847,
+      "trial_stderr": 0.020355,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 16,
+      "reader": "single_wave",
+      "accuracy": 0.477431,
+      "trial_stderr": 0.018154,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 32,
+      "reader": "bounded_tape",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 32,
+      "reader": "direct_addressed_phase",
+      "accuracy": 0.713542,
+      "trial_stderr": 0.009523,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 32,
+      "reader": "full_tape",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 32,
+      "reader": "indexed_bits",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 32,
+      "reader": "order_difference",
+      "accuracy": 0.480903,
+      "trial_stderr": 0.014265,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 32,
+      "reader": "paired_ratio",
+      "accuracy": 0.713542,
+      "trial_stderr": 0.009523,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 32,
+      "reader": "raw_pair_analytic",
+      "accuracy": 0.713542,
+      "trial_stderr": 0.009523,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 32,
+      "reader": "reversed_wave",
+      "accuracy": 0.519965,
+      "trial_stderr": 0.011556,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 32,
+      "reader": "single_wave",
+      "accuracy": 0.484375,
+      "trial_stderr": 0.014599,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 64,
+      "reader": "bounded_tape",
+      "accuracy": 0.75,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 64,
+      "reader": "direct_addressed_phase",
+      "accuracy": 0.621962,
+      "trial_stderr": 0.006814,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 64,
+      "reader": "full_tape",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 64,
+      "reader": "indexed_bits",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 64,
+      "reader": "order_difference",
+      "accuracy": 0.487847,
+      "trial_stderr": 0.010059,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 64,
+      "reader": "paired_ratio",
+      "accuracy": 0.621962,
+      "trial_stderr": 0.006814,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 64,
+      "reader": "raw_pair_analytic",
+      "accuracy": 0.621962,
+      "trial_stderr": 0.006814,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 64,
+      "reader": "reversed_wave",
+      "accuracy": 0.518663,
+      "trial_stderr": 0.009334,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 64,
+      "reader": "single_wave",
+      "accuracy": 0.49566,
+      "trial_stderr": 0.010241,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 96,
+      "reader": "bounded_tape",
+      "accuracy": 0.666667,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 96,
+      "reader": "direct_addressed_phase",
+      "accuracy": 0.588542,
+      "trial_stderr": 0.00777,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 96,
+      "reader": "full_tape",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 96,
+      "reader": "indexed_bits",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 96,
+      "reader": "order_difference",
+      "accuracy": 0.492188,
+      "trial_stderr": 0.008438,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 96,
+      "reader": "paired_ratio",
+      "accuracy": 0.588542,
+      "trial_stderr": 0.00777,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 96,
+      "reader": "raw_pair_analytic",
+      "accuracy": 0.588542,
+      "trial_stderr": 0.00777,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 96,
+      "reader": "reversed_wave",
+      "accuracy": 0.489294,
+      "trial_stderr": 0.007556,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 96,
+      "reader": "single_wave",
+      "accuracy": 0.495081,
+      "trial_stderr": 0.006581,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 128,
+      "reader": "bounded_tape",
+      "accuracy": 0.625,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 128,
+      "reader": "direct_addressed_phase",
+      "accuracy": 0.546007,
+      "trial_stderr": 0.005601,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 128,
+      "reader": "full_tape",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 128,
+      "reader": "indexed_bits",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 128,
+      "reader": "order_difference",
+      "accuracy": 0.500217,
+      "trial_stderr": 0.007914,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 128,
+      "reader": "paired_ratio",
+      "accuracy": 0.546007,
+      "trial_stderr": 0.005601,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 128,
+      "reader": "raw_pair_analytic",
+      "accuracy": 0.546007,
+      "trial_stderr": 0.005601,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 128,
+      "reader": "reversed_wave",
+      "accuracy": 0.501953,
+      "trial_stderr": 0.007746,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 128,
+      "reader": "single_wave",
+      "accuracy": 0.507161,
+      "trial_stderr": 0.005313,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 192,
+      "reader": "bounded_tape",
+      "accuracy": 0.583333,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 192,
+      "reader": "direct_addressed_phase",
+      "accuracy": 0.542245,
+      "trial_stderr": 0.005602,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 192,
+      "reader": "full_tape",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 192,
+      "reader": "indexed_bits",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 192,
+      "reader": "order_difference",
+      "accuracy": 0.504774,
+      "trial_stderr": 0.005231,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 192,
+      "reader": "paired_ratio",
+      "accuracy": 0.542245,
+      "trial_stderr": 0.005602,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 192,
+      "reader": "raw_pair_analytic",
+      "accuracy": 0.542245,
+      "trial_stderr": 0.005602,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 192,
+      "reader": "reversed_wave",
+      "accuracy": 0.494502,
+      "trial_stderr": 0.006463,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 192,
+      "reader": "single_wave",
+      "accuracy": 0.497396,
+      "trial_stderr": 0.007422,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 256,
+      "reader": "bounded_tape",
+      "accuracy": 0.5625,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 256,
+      "reader": "direct_addressed_phase",
+      "accuracy": 0.542426,
+      "trial_stderr": 0.00486,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 256,
+      "reader": "full_tape",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 256,
+      "reader": "indexed_bits",
+      "accuracy": 1.0,
+      "trial_stderr": 0.0,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 256,
+      "reader": "order_difference",
+      "accuracy": 0.499674,
+      "trial_stderr": 0.005029,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 256,
+      "reader": "paired_ratio",
+      "accuracy": 0.542426,
+      "trial_stderr": 0.00486,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 256,
+      "reader": "raw_pair_analytic",
+      "accuracy": 0.542426,
+      "trial_stderr": 0.00486,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 256,
+      "reader": "reversed_wave",
+      "accuracy": 0.494032,
+      "trial_stderr": 0.005347,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    },
+    {
+      "scenario": "broken_group_rule",
+      "facts": 256,
+      "reader": "single_wave",
+      "accuracy": 0.492405,
+      "trial_stderr": 0.005449,
+      "trials": 36,
+      "condition": "intermediate_phase_perturbed"
+    }
+  ]
+}
